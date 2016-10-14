@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Yarn</title>
+    <description>Fast, reliable, and secure dependency management.
+</description>
+    <link>https://yarnpkg.com/</link>
+    <atom:link href="https://yarnpkg.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Fri, 14 Oct 2016 17:04:40 +0800</pubDate>
+    <lastBuildDate>Fri, 14 Oct 2016 17:04:40 +0800</lastBuildDate>
+    <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>Yarn: A new package manager for JavaScript</title>
+        <description>&lt;p&gt;We’re pleased to announce the open source release of Yarn, a collaboration between Facebook, Exponent, Google, and Tilde. With Yarn, engineers still have access to the npm registry, but can install packages more quickly and manage dependencies consistently across machines or in secure offline environments. Yarn enables engineers to move faster and with confidence when using shared code so they can focus on what matters — building new products and features. Read the full announcement on &lt;a href=&quot;https://code.facebook.com/posts/1840075619545360&quot;&gt;code.facebook.com&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 11 Oct 2016 16:00:00 +0800</pubDate>
+        <link>https://yarnpkg.com/blog/2016/10/11/introducing-yarn</link>
+        <guid isPermaLink="true">https://yarnpkg.com/blog/2016/10/11/introducing-yarn</guid>
+        
+        
+        <category>announcements</category>
+        
+      </item>
+    
+  </channel>
+</rss>

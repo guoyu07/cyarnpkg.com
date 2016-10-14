@@ -1,0 +1,1237 @@
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:url" content="https://yarnpkg.com/zh-Hans/docs/install" />
+    <meta property="og:site_name" content="Yarn"/>
+    <meta property="og:title" content="Yarn" />
+    <meta property="og:image" content="https://yarnpkg.com/assets/og_image.png" />
+    <meta property="og:description" content="Fast, reliable, and secure dependency management." />
+
+    <title>安装 | Yarn</title>
+    <meta name="description" content="快速、可靠、安全的依赖管理工具。">
+
+    <link rel="stylesheet" href="/css/main.css?t=2016-10-14T17:04:40+08:00">
+    <link rel="canonical" href="https://yarnpkg.com/zh-Hans/docs/install">
+    <link rel="alternate" type="application/rss+xml" title="Yarn" href="https://yarnpkg.com/feed.xml" />
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.css" />
+  </head>
+  <body>
+    
+
+
+
+
+
+
+  
+
+
+
+    
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-static-top navbar-light">
+  <div class="container">
+
+    <a  href="/zh-Hans/" >
+      <svg class="logo navbar-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1154.8 518">
+  <defs>
+    <path id="main" d="
+      M718.6 257.8c-8 27.6-20.8 47.6-35.2 63.6V181c0-9.6-8.4-17.6-21.6-17.6-5.6 0-10.4 2.8-10.4 6.8 0 2.8 1.6 5.2 1.6 12.8v64.4c-4.8 28-16.8 54-32.8 54-11.6 0-18.4-11.6-18.4-33.2 0-33.6 4.4-51.2 11.6-80.8 1.6-6 13.2-22-6.4-22-21.2 0-18.4 8-21.2 14.8 0 0-13.4 47.6-13.4 90 0 34.8 14.6 57.6 41.4 57.6 17.2 0 29.6-11.6 39.2-27.6V351c-26.4 23.2-49.6 43.6-49.6 84 0 25.6 16 46 38.4 46 20.4 0 41.6-14.8 41.6-56.8V355c21.6-18.8 44.8-42.4 58.4-88.8.4-1.6.4-3.6.4-4 0-7.6-7.6-16.4-14-16.4-4 0-7.2 3.6-9.6 12zm-76.8 198c-6.4 0-10.4-9.6-10.4-22 0-24 8.8-39.2 21.6-52.4v42.8c0 7.6 1.6 31.6-11.2 31.6z
+      M833.4 301c-9.6 0-13.6-9.6-13.6-18.4v-66c0-9.6-8.4-17.6-21.6-17.6-5.6 0-10.4 2.8-10.4 6.8 0 2.8 1.6 5.2 1.6 12.8v61.6C785 291.4 777.8 301 767 301c-14 0-22.8-12-22.8-32.8 0-57.6 35.6-83.6 66-83.6 4 0 8 .8 11.6.8 4 0 5.2-2.4 5.2-9.2 0-10.4-7.6-16.8-18.4-16.8-48.8 0-95.2 40.8-95.2 107.6 0 34 16.4 60.4 47.6 60.4 15.2 0 26.4-7.2 34.4-16.4 6 9.6 16.8 16.4 30.8 16.4 34.4 0 50.4-36 57.2-62.4.4-1.6.4-2.4.4-2.8 0-7.6-7.6-16.4-14-16.4-4 0-8 3.6-9.6 12-3.6 17.6-10.8 43.2-26.8 43.2z
+      M949 327.4c34.4 0 50-36 57.2-62.4 0-.8.4-1.6.4-2.8 0-7.6-7.6-16.4-14-16.4-4 0-8 3.6-9.6 12-3.6 17.6-10.4 43.2-28.8 43.2-10.8 0-16-10.4-16-21.6 0-40 18-87.2 18-92 1.6-9.2-14.4-22.4-19.2-22.4h-20.8c-4 0-8 0-21.2-1.6-4.4-16.4-15.6-21.2-25.2-21.2-10.4 0-20 7.2-20 18.4 0 11.6 7.2 20 17.2 25.6-.4 20.4-2 53.6-6.4 69.6-3.6 13.6 17.2 28 22.4 11.2 7.2-23.2 9.6-58 10-73.6h34.8c-12.8 34.4-20 62.8-20 88.4 0 35.2 22.4 45.6 41.2 45.6z
+      M984.6 309.8c0 14.8 11.2 17.6 19.2 17.6 11.6 0 11.2-9.6 11.2-17.2v-58.4c2.8-31.6 27.6-66 39.2-66 7.6 0 8.4 10.4 8.4 22.8v81.2c0 20.4 12.4 37.6 33.6 37.6 34.4 0 51.4-36 58.2-62.4.4-1.6.4-2.4.4-2.8 0-7.6-7.6-16.4-14-16.4-4 0-8 3.6-9.6 12-3.6 17.6-11.8 43.2-27.8 43.2-10.4 0-10.4-14.8-10.4-18.4v-82.8c0-18.4-6.4-40.4-33.2-40.4-19.6 0-34 17.2-44.8 39.6v-18c0-9.6-8.4-17.6-21.6-17.6-5.6 0-10.4 2.8-10.4 6.8 0 2.8 1.6 5.2 1.6 12.8v126.8z
+      M259 0c143 0 259 116 259 259S402 518 259 518 0 402 0 259 116 0 259 0z"/>
+  </defs>
+
+  <use class="logo-primary-rave" xlink:href="#main" x="0" y="0" style="fill: url(#rave)"/>
+  <use class="logo-primary" xlink:href="#main" x="0" y="0"/>
+
+  <path class="logo-secondary" d="M435.2 337.5c-1.8-14.2-13.8-24-29.2-23.8-23 .3-42.3 12.2-55.1 20.1-5 3.1-9.3 5.4-13 7.1.8-11.6.1-26.8-5.9-43.5-7.3-20-17.1-32.3-24.1-39.4 8.1-11.8 19.2-29 24.4-55.6 4.5-22.7 3.1-58-7.2-77.8-2.1-4-5.6-6.9-10-8.1-1.8-.5-5.2-1.5-11.9.4C293.1 96 289.6 93.8 286.9 92c-5.6-3.6-12.2-4.4-18.4-2.1-8.3 3-15.4 11-22.1 25.2-1 2.1-1.9 4.1-2.7 6.1-12.7.9-32.7 5.5-49.6 23.8-2.1 2.3-6.2 4-10.5 5.6h.1c-8.8 3.1-12.8 10.3-17.7 23.3-6.8 18.2.2 36.1 7.1 47.7-9.4 8.4-21.9 21.8-28.5 37.5-8.2 19.4-9.1 38.4-8.8 48.7-7 7.4-17.8 21.3-19 36.9-1.6 21.8 6.3 36.6 9.8 42 1 1.6 2.1 2.9 3.3 4.2-.4 2.7-.5 5.6.1 8.6 1.3 7 5.7 12.7 12.4 16.3 13.2 7 31.6 10 45.8 2.9 5.1 5.4 14.4 10.6 31.3 10.6h1c4.3 0 58.9-2.9 74.8-6.8 7.1-1.7 12-4.7 15.2-7.4 10.2-3.2 38.4-12.8 65-30 18.8-12.2 25.3-14.8 39.3-18.2 13.6-3.3 22.1-15.7 20.4-29.4zm-23.8 14.7c-16 3.8-24.1 7.3-43.9 20.2-30.9 20-64.7 29.3-64.7 29.3s-2.8 4.2-10.9 6.1c-14 3.4-66.7 6.3-71.5 6.4-12.9.1-20.8-3.3-23-8.6-6.7-16 9.6-23 9.6-23s-3.6-2.2-5.7-4.2c-1.9-1.9-3.9-5.7-4.5-4.3-2.5 6.1-3.8 21-10.5 27.7-9.2 9.3-26.6 6.2-36.9.8-11.3-6 .8-20.1.8-20.1s-6.1 3.6-11-3.8c-4.4-6.8-8.5-18.4-7.4-32.7 1.2-16.3 19.4-32.1 19.4-32.1s-3.2-24.1 7.3-48.8c9.5-22.5 35.1-40.6 35.1-40.6s-21.5-23.8-13.5-45.2c5.2-14 7.3-13.9 9-14.5 6-2.3 11.8-4.8 16.1-9.5 21.5-23.2 48.9-18.8 48.9-18.8s13-39.5 25-31.8c3.7 2.4 17 32 17 32s14.2-8.3 15.8-5.2c8.6 16.7 9.6 48.6 5.8 68-6.4 32-22.4 49.2-28.8 60-1.5 2.5 17.2 10.4 29 43.1 10.9 29.9 1.2 55 2.9 57.8.3.5.4.7.4.7s12.5 1 37.6-14.5c13.4-8.3 29.3-17.6 47.4-17.8 17.5-.3 18.4 20.2 5.2 23.4z"/>
+
+  <linearGradient id="rainbow" x1="0%" y1="0%" x2="100%" y2="0">
+    <stop offset="0%"            stop-color="#00ff00"/>
+    <stop offset="7.1428571429%" stop-color="#86fa00"/>
+    <stop offset="14.285714286%" stop-color="#ffdb00"/>
+    <stop offset="21.428571429%" stop-color="#ff8d00"/>
+    <stop offset="28.571428572%" stop-color="#ff0001"/>
+    <stop offset="35.714285715%" stop-color="#ff0068"/>
+    <stop offset="42.857142857%" stop-color="#ff00ce"/>
+    <stop offset="50%"           stop-color="#ff00ff"/>
+    <stop offset="57.142857143%" stop-color="#ff2eff"/>
+    <stop offset="64.285714286%" stop-color="#b437ff"/>
+    <stop offset="71.428571429%" stop-color="#616aff"/>
+    <stop offset="78.571428572%" stop-color="#00c0ff"/>
+    <stop offset="85.714285715%" stop-color="#00d8ff"/>
+    <stop offset="92.857142858%" stop-color="#00ffff"/>
+    <stop offset="100%"          stop-color="#00ff00"/>
+  </linearGradient>
+
+  <pattern id="rave" x="0" y="0" width="100%" height="100%" patternUnits="userSpaceOnUse">
+    <rect x="0" y="0" width="2000%" height="100%" fill="url(#rainbow)">
+      <animate attributeType="XML" attributeName="x" from="-1900%" to="100%" dur="5s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="0" y="0" width="2000%" height="100%" fill="url(#rainbow)">
+      <animate attributeType="XML" attributeName="x" from="-2800%" to="-1900%" dur="5s" repeatCount="indefinite"/>
+    </rect>
+  </pattern>
+</svg>
+
+      <span class="sr-only">Yarn</span>
+    </a>
+
+    <button class="navbar-toggler hidden-lg-up pull-xs-right" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+      <!-- &#9776; -->
+    </button>
+
+    <div class="collapse navbar-toggleable-md" id="navbar">
+      <ul class="nav navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/zh-Hans/docs/getting-started">开始使用</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/zh-Hans/docs">文档</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/blog">博客</a>
+        </li>
+        <li class="nav-item algolia-search-wrapper">
+          <input id="algolia-doc-search" type="search" placeholder="Search docs..." autofocus="autofocus"/>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav pull-lg-right">
+        <li class="nav-item dropdown">
+          <a id="dropdownNavLanguage" class="nav-link dropdown-toggle" role="button" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <svg class="language navbar-language" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+  <path d="M19.753 10.909c-.624-1.707-2.366-2.726-4.661-2.726-.09 0-.176.002-.262.006l-.016-2.063 3.525-.607c.115-.019.133-.119.109-.231-.023-.111-.167-.883-.188-.976-.027-.131-.102-.127-.207-.109-.104.018-3.25.461-3.25.461l-.013-2.078c-.001-.125-.069-.158-.194-.156l-1.025.016c-.105.002-.164.049-.162.148l.033 2.307s-3.061.527-3.144.543c-.084.014-.17.053-.151.143.019.09.19 1.094.208 1.172.018.08.072.129.188.107l2.924-.504.035 2.018c-1.077.281-1.801.824-2.256 1.303-.768.807-1.207 1.887-1.207 2.963 0 1.586.971 2.529 2.328 2.695 3.162.387 5.119-3.06 5.769-4.715 1.097 1.506.256 4.354-2.094 5.98-.043.029-.098.129-.033.207l.619.756c.08.096.206.059.256.023 2.51-1.73 3.661-4.515 2.869-6.683zm-7.386 3.188c-.966-.121-.944-.914-.944-1.453 0-.773.327-1.58.876-2.156a3.21 3.21 0 0 1 1.229-.799l.082 4.277a2.773 2.773 0 0 1-1.243.131zm2.427-.553l.046-4.109c.084-.004.166-.01.252-.01.773 0 1.494.145 1.885.361.391.217-1.023 2.713-2.183 3.758zm-8.95-7.668a.196.196 0 0 0-.196-.145h-1.95a.194.194 0 0 0-.194.144L.008 16.916c-.017.051-.011.076.062.076h1.733c.075 0 .099-.023.114-.072l1.008-3.318h3.496l1.008 3.318c.016.049.039.072.113.072h1.734c.072 0 .078-.025.062-.076-.014-.05-3.083-9.741-3.494-11.04zm-2.618 6.318l1.447-5.25 1.447 5.25H3.226z"/>
+</svg>
+
+            中文
+          </a>
+          <div class="dropdown-menu" aria-labelledby="dropdownNavLanguage">
+            
+              
+                <a href="/en/docs/install"
+                  class="dropdown-item">
+                  English
+                </a>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+              
+                <a href="/zh-Hans/docs/install"
+                  class="dropdown-item active">
+                  中文
+                </a>
+              
+            
+              
+            
+          </div>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="https://discord.gg/yarnpkg">Discord</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/yarnpkg">Twitter</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/yarnpkg">GitHub</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    
+
+
+
+
+
+
+
+
+
+<div class="hero">
+  <div class="container">
+    
+
+      <h1 class="hero-text display-4">安装</h1>
+    
+  </div>
+</div>
+
+<div class="container">
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+    
+    
+    
+
+
+
+
+<div class="row">
+  <div class="col-md-8 guide">
+    
+
+
+
+
+
+
+  
+
+  
+
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+    
+    
+
+    
+
+    
+      
+    
+  
+
+
+
+    <div class="guide-content">
+      
+
+
+
+
+
+
+
+
+
+开始使用 Yarn 之前，你需要先安装它。 这里有好几种安装方案：
+
+
+
+
+
+
+
+<div class="tabs">
+  <div class="nav nav-tabs bg-faded text-xs-center">
+    <ul class="nav navbar-nav nav-inline">
+      <a id="mac-tab" class="nav-item nav-link" data-toggle="tab" href="#mac">macOS</a>
+      <a id="windows-tab" class="nav-item nav-link" data-toggle="tab" href="#windows">Windows</a> <!-- I see you Daniel. -->
+      <a id="linux-tab" class="nav-item nav-link" data-toggle="tab" href="#linux">Linux</a>
+      <a id="alternatives-tab" class="nav-item nav-link text-success" data-toggle="tab" href="#alternatives">备选方案</a>
+    </ul>
+  </div>
+
+  <div class="tab-content">
+    <div id="select-platform" class="tab-pane bg-faded active">
+      <p class="text-xs-center m-y-2 text-muted">
+        选择的你平台
+      </p>
+    </div>
+    <div class="tab-pane" id="mac"><h3 id="macos">macOS</h3>
+
+<p>You will need to first
+<a href="https://nodejs.org/">install Node.js</a> if you don’t already have it installed.</p>
+
+<h4 id="homebrew">Homebrew</h4>
+
+<p>You can install Yarn through the <a href="http://brew.sh/">Homebrew package manager</a>.
+This will also install Node.js if it is not already installed.</p>
+
+<div class="language-sh highlighter-rouge"><pre class="rougeHighlight"><code>brew update
+brew install yarn
+</code></pre>
+</div>
+
+<h4 id="installation-script">Installation Script</h4>
+
+<p>One of the easiest ways to install Yarn on macOS and generic Unix environments
+is via our shell script. You can install Yarn by running the following code in
+your terminal:</p>
+
+<div class="language-sh highlighter-rouge"><pre class="rougeHighlight"><code>curl -o- -L https://yarnpkg.com/install.sh | bash
+</code></pre>
+</div>
+
+<h4 id="manual-install-via-tarball">Manual Install via tarball</h4>
+
+<p>You can install Yarn by <a href="/latest.tar.gz">downloading a tarball</a> and
+extracting it anywhere.</p>
+
+<div class="language-sh highlighter-rouge"><pre class="rougeHighlight"><code><span class="nb">cd</span> /opt
+wget https://yarnpkg.com/latest.tar.gz
+tar zvxf yarn-<span class="k">*</span>.tar.gz
+<span class="c"># Yarn is now in /opt/yarn-[version]/</span>
+</code></pre>
+</div>
+
+<h4 id="path-setup">Path Setup</h4>
+
+<p>You will need to set up the <code class="highlighter-rouge">PATH</code> environment variable in your terminal to have access to Yarn’s binaries globally.</p>
+
+<p>Add <code class="highlighter-rouge">export PATH="$HOME/.yarn/bin:$PATH"</code> to your profile (this may be in your <code class="highlighter-rouge">.profile</code>, <code class="highlighter-rouge">.bashrc</code>, <code class="highlighter-rouge">.zshrc</code>, etc.)</p>
+
+</div>
+    <div class="tab-pane" id="windows"><h3 id="windows">Windows</h3>
+
+<p>There are two options for installing Yarn on Windows.</p>
+
+<h4 id="download-the-installer">Download the installer</h4>
+
+<p>This will give you a <code class="highlighter-rouge">.msi</code> file that when run will walk you through installing
+Yarn on Windows.</p>
+
+<p>If you use the installer you will first need to install
+<a href="https://nodejs.org/">Node.js</a>.</p>
+
+<p><a class="btn btn-primary" href="/latest.msi">Download Installer</a></p>
+
+<h4 id="install-via-chocolatey">Install via Chocolatey</h4>
+
+<p>A Chocolatey package is coming soon!</p>
+
+<p><strong>Note:</strong> Yarn is currently incompatible with installation via Ubuntu on Windows awaiting a resolution to 
+<a href="https://github.com/Microsoft/BashOnWindows/issues/468">468</a></p>
+
+<h4 id="path-setup">Path Setup</h4>
+
+<p>You will need to set up the <code class="highlighter-rouge">PATH</code> environment variable in your terminal to have access to Yarn’s binaries globally.</p>
+
+<p>Add <code class="highlighter-rouge">set PATH=%PATH%;C:\.yarn\bin"</code> to your shell environment.</p>
+
+</div>
+    <div class="tab-pane" id="linux"><h3 id="debianubuntu-linux">Debian/Ubuntu Linux</h3>
+
+<p>On Debian or Ubuntu Linux, you can install Yarn via our Debian package
+repository. You will first need to configure the repository:</p>
+
+<div class="language-sh highlighter-rouge"><pre class="rougeHighlight"><code>sudo apt-key adv --keyserver pgp.mit.edu --recv D101F7899D41F3C3
+<span class="nb">echo</span> <span class="s2">"deb http://dl.yarnpkg.com/debian/ stable main"</span> | sudo tee /etc/apt/sources.list.d/yarn.list
+</code></pre>
+</div>
+
+<p>On Ubuntu 14.04 and Debian Stable, you will also need to configure <a href="https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions">the NodeSource repository</a> to get a new enough version of Node.js (Debian Testing and Ubuntu 16.04 come packaged with a sufficient version of Node.js, so this step is not required in those environments)</p>
+
+<p>Then you can simply:</p>
+
+<div class="language-sh highlighter-rouge"><pre class="rougeHighlight"><code>sudo apt-get update <span class="o">&amp;&amp;</span> sudo apt-get install yarn
+</code></pre>
+</div>
+
+<h3 id="centos--fedora--rhel">CentOS / Fedora / RHEL</h3>
+
+<p>On CentOS, Fedora and RHEL, you can install Yarn via our RPM package repository.</p>
+<div class="language-sh highlighter-rouge"><pre class="rougeHighlight"><code>sudo wget https://dl.yarnpkg.com/rpm/yarn.repo -O /etc/yum.repos.d/yarn.repo
+</code></pre>
+</div>
+
+<p>If you do not already have Node.js installed, you should also configure
+<a href="https://nodejs.org/en/download/package-manager/#enterprise-linux-and-fedora">the NodeSource repository</a>:</p>
+<div class="language-sh highlighter-rouge"><pre class="rougeHighlight"><code>curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
+</code></pre>
+</div>
+
+<p>Then you can simply:</p>
+<div class="language-sh highlighter-rouge"><pre class="rougeHighlight"><code>sudo yum install yarn
+</code></pre>
+</div>
+
+<h3 id="arch-linux">Arch Linux</h3>
+
+<p>On Arch Linux yarn can be installed through the <strong>AUR</strong>.</p>
+
+<p>If you use an <a href="https://wiki.archlinux.org/index.php/AUR_helpers">AUR Helper</a> such as yaourt you can simply run:</p>
+<div class="language-sh highlighter-rouge"><pre class="rougeHighlight"><code>yaourt -S yarn
+</code></pre>
+</div>
+
+<h3 id="solus">Solus</h3>
+
+<p>On Solus, you can install yarn via the Solus repository.</p>
+<div class="language-sh highlighter-rouge"><pre class="rougeHighlight"><code>sudo eopkg install yarn
+</code></pre>
+</div>
+
+<h3 id="path-setup">Path Setup</h3>
+
+<p>You will need to set up the <code class="highlighter-rouge">PATH</code> environment variable in your terminal to have access to Yarn’s binaries globally.</p>
+
+<p>Add <code class="highlighter-rouge">export PATH="$HOME/.yarn/bin:$PATH"</code> to your profile (this may be in your <code class="highlighter-rouge">.profile</code>, <code class="highlighter-rouge">.bashrc</code>, <code class="highlighter-rouge">.zshrc</code>, etc.)</p>
+
+</div>
+    <div class="tab-pane" id="alternatives"><h3 id="alternatives">Alternatives</h3>
+
+<p>If you are using another OS or one of the other options specific to your OS
+will not work for you, there are a couple of alternatives. You will need to
+<a href="https://nodejs.org/">install Node.js</a> if you don’t already have it installed.</p>
+
+<p>On common Linux distributions such as Debian, Ubuntu and CentOS, it is
+recommended to install Yarn via our packages instead.</p>
+
+<h4 id="installation-script">Installation Script</h4>
+
+<p>One of the easiest ways to install Yarn on macOS and generic Unix environments
+is via our shell script. You can install Yarn by running the following code in
+your terminal:</p>
+
+<div class="language-sh highlighter-rouge"><pre class="rougeHighlight"><code>curl -o- -L https://yarnpkg.com/install.sh | bash
+</code></pre>
+</div>
+
+<h4 id="manual-install-via-tarball">Manual Install via tarball</h4>
+
+<p>You can install Yarn by <a href="/latest.tar.gz">downloading a tarball</a> and
+extracting it anywhere.</p>
+
+<div class="language-sh highlighter-rouge"><pre class="rougeHighlight"><code><span class="nb">cd</span> /opt
+wget https://yarnpkg.com/latest.tar.gz
+tar zvxf yarn-<span class="k">*</span>.tar.gz
+<span class="c"># Yarn is now in /opt/yarn-[version]/</span>
+</code></pre>
+</div>
+
+<h4 id="install-via-npm">Install via npm</h4>
+
+<p>You can also install Yarn through the <a href="http://npmjs.org/">npm package manager</a>
+if you already have it installed. If you already have
+<a href="https://nodejs.org/">Node.js</a> installed then you should already have npm.</p>
+
+<p>Once you have npm installed you can run:</p>
+
+<div class="language-sh highlighter-rouge"><pre class="rougeHighlight"><code>npm install --global yarn
+</code></pre>
+</div>
+
+<h3 id="path-setup">Path Setup</h3>
+
+<h4 id="unixlinuxmacos">Unix/Linux/macOS</h4>
+
+<p>You will need to set up the <code class="highlighter-rouge">PATH</code> environment variable in your terminal to have access to Yarn’s binaries globally.</p>
+
+<p>Add <code class="highlighter-rouge">export PATH="$HOME/.yarn/bin:$PATH"</code> to your profile (this may be in your <code class="highlighter-rouge">.profile</code>, <code class="highlighter-rouge">.bashrc</code>, <code class="highlighter-rouge">.zshrc</code>, etc.)</p>
+
+<h4 id="windows">Windows</h4>
+
+<p>You will need to set up the <code class="highlighter-rouge">PATH</code> environment variable in your terminal to have access to Yarn’s binaries globally.</p>
+
+<p>Add <code class="highlighter-rouge">set PATH=%PATH%;C:\.yarn\bin"</code> to your shell environment.</p>
+
+</div>
+  </div>
+</div>
+
+<p>
+  Test that Yarn is installed by running:
+</p>
+
+
+<div class="language-sh highlighter-rouge"><pre class="rougeHighlight"><code>yarn --version</code></pre>
+</div>
+
+
+
+
+
+
+
+<blockquote>
+  <p>
+    <strong>有疑问？</strong>
+    如果你使用以上方案都无法安装 Yarn，请在 GitHub 中搜索已存在的 Issue 或提交一个新的 Issue。
+
+  </p>
+  <p>
+    <a class="text-success" href="https://github.com/yarnpkg/yarn/issues?utf8=%E2%9C%93&q=is%3Aissue%20is%3Aopen%20%22Installation%20Problem%22%20in%3Atitle%20">搜索已存在的 issue</a>
+    &middot;
+    <a class="text-danger" href="https://github.com/yarnpkg/yarn/issues/new?title=Installation%20Problem:%20[title]&body=%0A**Which%20operating%20system%20are%20you%20using:**%0A%0A%0A**Please%20describe%20the%20steps%20you%20took%20when%20trying%20to%20install%20Yarn%20and%20what%20went%20wrong:**%0A%0A">提交一个新的 issue</a>
+  </p>
+</blockquote>
+
+    </div>
+
+    <p class="guide-controls">
+      
+        <span class="pull-md-left">
+          &larr;
+          上一页:
+          <a href="/zh-Hans/docs/getting-started">开始使用</a>
+        </span>
+      
+
+      
+        <span class="pull-md-right">
+          下一页:
+          <a href="/zh-Hans/docs/usage">用例</a>
+          &rarr;
+        </span>
+      
+    </p>
+
+    
+  </div>
+
+  <div class="col-md-4">
+    <ul class="nav nav-stacked guide-nav">
+      
+        <li class="nav-item">
+          
+            <a class="nav-link" href="/zh-Hans/docs/getting-started">
+              开始使用
+            </a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a class="nav-link active">
+              安装
+            </a>
+          
+        </li>
+      
+        <li class="nav-item">
+          
+            <a class="nav-link" href="/zh-Hans/docs/usage">
+              用例
+            </a>
+          
+        </li>
+      
+    </ul>
+  </div>
+</div>
+
+</div>
+
+    
+
+
+
+
+
+
+
+
+
+<hr class="feature-divider">
+
+<div class="container">
+  <footer class="footer">
+    <div class="footer-left">
+      <span class="footer-item">Yarn</span>
+      <span class="footer-item"><a href="https://github.com/yarnpkg/yarn/blob/master/LICENSE">以 BSD 许可证分发</a></span>
+      <span class="footer-item"><a href="/zh-Hans/org/code-of-conduct">行为准则</a></span>
+    </div>
+
+    <div class="footer-right">
+      
+
+      
+        <span class="footer-item"><a href="/zh-Hans/org/translating">编辑此页</a></span>
+      
+    </div>
+
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/docsearch.js/1/docsearch.min.js"></script>
+    <script type="text/javascript" src="/js/docsearch.js"></script>
+  </footer>
+</div>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-85522875-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha256-/5pHDZh2fv1eZImyfiThtB5Ag4LqDjyittT7fLjdT/8=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/js/bootstrap.min.js" integrity="sha256-+h0g0j7qusP72OZaLPCSZ5wjZLnoUUicoxbvrl14WxM=" crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/holder/2.9.4/holder.min.js" integrity="sha256-ifihHN6L/pNU1ZQikrAb7CnyMBvisKG3SUAab0F3kVU=" crossorigin="anonymous"></script>
+
+    
+      <script type="text/javascript" src="/js/install.js"></script>
+    
+  </body>
+</html>

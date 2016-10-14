@@ -1,0 +1,84 @@
+/downloads/:version/:file https://github.com/yarnpkg/yarn/releases/download/v:version/:file
+
+# Nice short URLs to download the latest release
+/latest.tar.gz https://github.com/yarnpkg/yarn/releases/download/v0.15.0/yarn-v0.15.0.tar.gz      302
+/latest.msi    https://github.com/yarnpkg/yarn/releases/download/v0.15.0/yarn-0.15.0.msi          302
+/latest.deb    https://github.com/yarnpkg/yarn/releases/download/v0.15.0/yarn_0.15.0_all.deb      302
+/latest.rpm    https://github.com/yarnpkg/yarn/releases/download/v0.15.0/yarn-0.15.0-1.noarch.rpm 302
+/install.sh    https://raw.githubusercontent.com/yarnpkg/yarn/master/scripts/install-latest.sh
+
+
+  
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+      
+/  /zh-Hans  302  Language=zh-cn
+      
+/  /zh-Hans  302  Language=zh-hk
+      
+/  /zh-Hans  302  Language=zh-tw
+      
+/  /zh-Hans  302  Language=zh-sg
+      
+    
+  
+
+  
+

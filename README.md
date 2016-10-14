@@ -19,7 +19,7 @@
 标题：
 
 ```
-认领翻译 _installations/alternatives.md
+认领翻译 docs/_installations/alternatives.md
 ```
 
 内容可以为空。
@@ -29,7 +29,7 @@
 标题：
 
 ```
-认领翻译 [c-g]*
+认领翻译 docs/[c-g]*
 ```
 
 ### 2. 开始翻译
@@ -55,7 +55,7 @@ package | 包
 标题：
 
 ```
-认领校对 _installations/alternatives.md
+认领校对 docs/_installations/alternatives.md
 ```
 
 同样认领前请搜索 Issue 看有没有人已经认领了。

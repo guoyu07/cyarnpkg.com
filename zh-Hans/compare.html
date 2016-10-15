@@ -28,10 +28,9 @@ layout: page
 {% endfor %}
 
 <p class="lead text-xs-center">
-  Time to install React Native's dependencies on a MacBook Pro (Mid 2015) in
-  different scenarios.
+  在 MacBook Pro（2015 年中版）中不同场景下安装 React Native 的依赖所需的时间对比。
   <br>
-  <small>(Lower is better - average of 5 runs per scenario)</small>
+  <small>（越少表示越好——每个场景取五次的平均值）(Lower is better - average of 5 runs per scenario)</small>
 </p>
 
 <p class="text-xs-center">
@@ -50,7 +49,7 @@ layout: page
     <h4 class="compare-heading">
       <span class="tag tag-{% if comparison.warm_cache %}success{% else %}default{% endif %}">
         {% if comparison.warm_cache %}✔{% else %}✗{% endif %}
-        Warm Cache
+        热缓存
       </span>
 
       <span class="tag tag-{% if comparison.node_modules %}success{% else %}default{% endif %}">
@@ -85,7 +84,7 @@ layout: page
 {% endfor %}
 
 <p class="small text-xs-center text-muted m-t-2">
-  September 30, 2016 &middot;
+  2016 年 9 月 30 日 &middot;
   Node.js v6.2.2 &middot;
   npm 3.10.3 &middot;
   Yarn 0.13.0 &middot;

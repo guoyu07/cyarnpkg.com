@@ -13,7 +13,7 @@ curl -o- -L https://yarnpkg.com/install.sh | bash
 
 ```sh
 cd /opt
-wget https://yarnpkg.com/lastest.tar.gz
+wget https://yarnpkg.com/latest.tar.gz
 tar zvxf yarn-*.tar.gz
 # Yarn 现在在 /opt/yarn-[version]/
 ```

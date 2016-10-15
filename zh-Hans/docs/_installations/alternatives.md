@@ -12,9 +12,9 @@
 
 如果你安装了 npm 的话, 你也可以通过 [npm包管理工具](http://npmjs.org/) 来安装 Yarn。
 
-如果你已经安装 [Node.js](https://nodejs.org/)，那么你就已经安装了npm。
+如果你已经安装 [Node.js](https://nodejs.org/)，那么你就已经安装了 npm。
 
-一旦安装了npm, 你可以运行以下命令安装Yarn:
+一旦安装了npm, 你可以运行以下命令安装 Yarn:
 
 ```sh
 npm install --global yarn
@@ -22,7 +22,7 @@ npm install --global yarn
 
 ### Path Setup
 
-#### Unix/Linxu/macOS
+#### Unix/Linux/macOS
 
 {% include_relative _installations/unix_path_setup.md %}
 

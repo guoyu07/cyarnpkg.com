@@ -37,10 +37,10 @@ package-4^@4.0.0, package-4@^4.5.0:
 ### 通过 Yarn 管理<a class="toc" id="toc-managed-by-yarn" href="#toc-managed-by-yarn"></a>
 
 您的 `yarn.lock` 文件由 Yarn 自动创建，并且完全通过 Yarn 进行操作。
-当你通过 Yarn 指令进行 添加／更新／移除 依赖包时，它将自动帮您更新 `yarn.lock` 文件。
+当您通过 Yarn 指令进行 添加／更新／移除 依赖包时，它将自动帮您更新 `yarn.lock` 文件。
 请不要手动地直接编辑该文件，因为这容易让某些东西损坏。
 
-### Check into source control <a class="toc" id="toc-check-into-source-control" href="#toc-check-into-source-control"></a>
+### 检查源码管理器 <a class="toc" id="toc-check-into-source-control" href="#toc-check-into-source-control"></a>
 
 所有 `yarn.lock` 文件需要添加进源码管理器（比如 git 或者 mercurial）。
 这使得 Yarn 能够跨机器安装完全一致的依赖树，无论是您同事的笔记本电脑还是一个持续集成服务器。

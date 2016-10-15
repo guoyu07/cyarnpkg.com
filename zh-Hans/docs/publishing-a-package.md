@@ -4,38 +4,34 @@ guide: docs_creating_a_package
 layout: guide
 ---
 
-In order to share your package with other developers around the world through
-Yarn, you'll first need to publish it.
+想要通过 Yarn 和来自全世界的开发者分享你的包，第一步就是发布它。
 
-When you publish a package with Yarn it goes onto the
-[npm registry](https://www.npmjs.com/) which is used to distribute packages
-globally.
+您通过 Yarn 发布的包将存放在
+[npm 仓库](https://www.npmjs.com/)，它会向全世界分发你的包。
 
-### Logging into npm <a class="toc" id="toc-logging-into-npm" href="#toc-logging-into-npm"></a>
+### 登陆到 npm <a class="toc" id="toc-logging-into-npm" href="#toc-logging-into-npm"></a>
 
-If you haven't already, you'll first need to
-[create an npm account](https://www.npmjs.com/signup). Once you've done that
-you can setup your username and email in Yarn.
+如果您还没有 npm 账户，请先
+[注册一个 npm 账户](https://www.npmjs.com/signup)。
+当您完成注册后，您能在 Yarn 中设置您的用户名和邮箱。
 
 ```sh
 yarn login
 ```
 
-This will prompt you for your username and email. However, it will not ask you
-for your password. Yarn does not hold onto your password or any sessions. When
-you go to publish or modify something on npm, you will need to enter your
-password then.
+它会提示您即时输入用户名和邮箱。不过，它不会询问您的密码。
+Yarn 在任何情形下都不会拥有您的密码。
+所以当您发布或者修改 npm 上的某些文件时，你需要手动输入您的密码。
 
-### Publishing your package <a class="toc" id="toc-publishing-your-package" href="#toc-publishing-your-package"></a>
+### 发布您的包 <a class="toc" id="toc-publishing-your-package" href="#toc-publishing-your-package"></a>
 
-Once you have written all the code in your package, tested it out and you are
-ready to publish you can kick things off:
+当您完成了您的包中的所有代码，测试其通过并且准备发布时，您可以按下面的方法做：
 
 ```sh
 yarn publish
 ```
 
-First you will be asked to enter a new version to publish:
+首先，你会被要求输入一个新的版本号用于发布：
 
 ```
 [1/4] Bumping version...
@@ -43,7 +39,7 @@ info Current version: 1.0.0
 question New version: _____
 ```
 
-Next you will be asked to enter your npm password:
+然后，你会被要求输入您的 npm 账户密码：
 
 ```
 [2/4] Logging in...
@@ -52,7 +48,7 @@ info npm username: you@example.com
 question npm password: ____________
 ```
 
-Finally, Yarn will publish the package and revoke your session token.
+最后，Yarn 会发布这个包，并且撤销您的会话令牌。
 
 ```
 [3/4] Publishing...
@@ -62,20 +58,18 @@ success Revoked login token.
 ✨  Done in 10.53s.
 ```
 
-Each time you want to publish a new version of your package you can follow this
-same flow.
+无论何时，当您想要发布一个新的版本时，您同样可以通过该流程来实现。
 
-### Accessing your package <a class="toc" id="toc-accessing-your-package" href="#toc-accessing-your-package"></a>
+### 获取您的包 <a class="toc" id="toc-accessing-your-package" href="#toc-accessing-your-package"></a>
 
-Your package should now be available at
-https://www.npmjs.com/package/my-new-project and you should be able to install
-it:
+您的包可以通过浏览器访问 https://www.npmjs.com/package/my-new-project 来获取，
+并且可以通过命令来安装它：
 
 ```sh
 yarn add my-new-project
 ```
 
-You can also see all the info in the npm registry:
+您也可以查看它在 npm 仓库中的详细信息：
 
 ```sh
 yarn info my-new-project

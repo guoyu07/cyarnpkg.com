@@ -1,12 +1,10 @@
 ### macOS
 
-You will need to first
-[install Node.js](https://nodejs.org/) if you don't already have it installed.
+如果你还没有安装 [Node.js](https://nodejs.org/)，那么你需要首先 [安装 Node.js](https://nodejs.org/)。
 
 #### Homebrew
 
-You can install Yarn through the [Homebrew package manager](http://brew.sh/).
-This will also install Node.js if it is not already installed.
+你可以通过 [Homebrew 包管理工具](http://brew.sh/) 安装Yarn，当你未安装 Node.js 时，这个操作将自动为你安装 Node.js。
 
 ```sh
 brew update

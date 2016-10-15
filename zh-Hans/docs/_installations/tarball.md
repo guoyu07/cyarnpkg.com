@@ -1,21 +1,19 @@
-#### Installation Script
+#### 安装脚本
 
-One of the easiest ways to install Yarn on macOS and generic Unix environments
-is via our shell script. You can install Yarn by running the following code in
-your terminal:
+一种最简单的在 macOS 和 通用的 UNIX 环境中安装 Yarn 的方式是通过我们的 shell 脚本。
+你可以在终端中运行以下命令来安装 Yarn：
 
 ```sh
 curl -o- -L https://yarnpkg.com/install.sh | bash
 ```
 
-#### Manual Install via tarball
+#### 通过压缩包安装
 
-You can install Yarn by [downloading a tarball]({{site.baseurl}}/latest.tar.gz) and
-extracting it anywhere.
+你可以通过 [下载压缩包]({{site.baseurl}}/latest.tar.gz) 来随地提取和安装 Yarn。
 
 ```sh
 cd /opt
 wget https://yarnpkg.com/latest.tar.gz
 tar zvxf yarn-*.tar.gz
-# Yarn is now in /opt/yarn-[version]/
+# Yarn 现在在 /opt/yarn-[version]/
 ```

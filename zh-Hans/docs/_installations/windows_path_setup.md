@@ -1,3 +1,3 @@
-You will need to set up the `PATH` environment variable in your terminal to have access to Yarn's binaries globally.
+你需要设置你终端的 `PATH` 环境变量，以便全局的访问 Yarn 的二进制文件。
 
-Add `set PATH=%PATH%;C:\.yarn\bin"` to your shell environment.
+添加 `set PATH=%PATH%;C:\.yarn\bin"` 到你的 shell 环境中。

@@ -1,23 +1,21 @@
 ### Windows
 
-There are two options for installing Yarn on Windows.
+在 Windows 上有 2 种方式来安装 Yarn。
 
-#### Download the installer
+#### 下载安装程序
 
-This will give you a `.msi` file that when run will walk you through installing
-Yarn on Windows.
+你可以在 Windows 上获取 `.msi` 文件，运行时将引导你完成 Yarn 的安装。
 
-If you use the installer you will first need to install
-[Node.js](https://nodejs.org/).
+如果你使用安装程序的方式，你首先需要安装 [Node.js](https://nodejs.org/)。
 
-<a class="btn btn-primary" href="/latest.msi">Download Installer</a>
+<a class="btn btn-primary" href="/latest.msi">安装程序下载</a>
 
 
-#### Install via Chocolatey
+#### 通过 Chocolatey 安装
 
-A Chocolatey package is coming soon!
+我们即将提供 Chocolatey 包的方式！
 
-**Note:** Yarn is currently incompatible with installation via Ubuntu on Windows awaiting a resolution to 
+**Note:** Yarn 目前不兼容通过 Ubuntu on Windows 进行安装，请等待解决。
 <a href="https://github.com/Microsoft/BashOnWindows/issues/468">468</a>
 
 #### Path Setup

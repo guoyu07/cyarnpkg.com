@@ -4,11 +4,11 @@ guide: docs_configuration
 layout: guide
 ---
 
-## Essentials <a class="toc" id="toc-essentials" href="#toc-essentials"></a>
+## 必要字段 <a class="toc" id="toc-essentials" href="#toc-essentials"></a>
 
-The two most important fields in your `package.json` are `name` and `version`,
-without them your package won't be able to install. The `name` and `version`
-fields are used together to create a unique id.
+在您的 `package.json` 文件中，最重要的两个字段是 `name` 和 `version`，
+没有它们，您的包将不能够被安装。`name` 和 `version`
+字段被一起作用与创建唯一 ID。
 
 ### `name` <a class="toc" id="toc-name" href="#toc-name"></a>
 
@@ -18,8 +18,7 @@ fields are used together to create a unique id.
 }
 ```
 
-This is the name of your package. It gets used in URLs, as an argument on the
-command line, and as the directory name inside `node_modules`.
+这是您的包的名称。他被用于 URLs、命令行参数以及 `node_modules` 目录下模块的子目录名称。
 
 ```sh
 yarn add [name]
@@ -33,22 +32,19 @@ node_modules/[name]
 https://registry.npmjs.org/[name]/-/[name]-[version].tgz
 ```
 
-**Rules**
+**规则**
 
-- Must be less than or equal to 214 characters (including the `@scope/` for
-  scoped packages).
-- Must not start with a dot (`.`) or an underscore (`_`).
-- Must not have an uppercase letter in the name.
-- Must use only URL-safe characters.
+- 必须小于或者等于 214 个字符（包括了被包含的包中的 `@scope/`）。
+- 不可以以点（`.`）或者下划线（`_`）为起始字符。
+- 名称中不能有大写字母。
+- 只能使用 URL-safe 字符。
 
-**Tips**
+**提示**
 
-- Don't use the same name as a core Node.js module
-- Don't put `js` or `node` in the name.
-- Keep names short and descriptive. You want people to understand what it is
-  from the name, but it will also be used in `require()` calls.
-- Make sure that there isn't something in the
-  [registry](https://www.npmjs.com/) with the same name.
+- 不要和 Node.js 核心模块使用一样的名称。
+- 不要在名称中加入 `js` 或者 `node`。
+- 保持名称简短且易于描述。您可能希望别人能从包名中理解包的功能，但它同时也要被 `require()` 调用。
+- 确保[仓库](https://www.npmjs.com/)中没有同名的包。
 
 ### `version` <a class="toc" id="toc-version" href="#toc-version"></a>
 
@@ -57,9 +53,9 @@ https://registry.npmjs.org/[name]/-/[name]-[version].tgz
   "version": "1.0.0"
 }
 ```
-The current version of your package.
+您的包的当前版本号。
 
-## Info <a class="toc" id="toc-info" href="#toc-info"></a>
+## 详细信息 <a class="toc" id="toc-info" href="#toc-info"></a>
 
 ### `description` <a class="toc" id="toc-description" href="#toc-description"></a>
 
@@ -69,7 +65,8 @@ The current version of your package.
 }
 ```
 
-The description is just a string that helps people understand the purpose of the package. It can be used when searching for packages in a package manager as well.
+描述字段是一个单纯的字符串，它让别人能够明白您的包的功能。
+它也能够在别人通过包管理器搜索包的时候被使用到。
 
 ### `keywords` <a class="toc" id="toc-keywords" href="#toc-keywords"></a>
 
@@ -79,7 +76,7 @@ The description is just a string that helps people understand the purpose of the
 }
 ```
 
-Keywords are an array of strings that are useful when searching for packages in a package manager.
+关键字字段是一个字符串数组，在包管理器中搜索包时，它非常的有用。
 
 ### `license` <a class="toc" id="toc-license" href="#toc-license"></a>
 
@@ -92,29 +89,25 @@ Keywords are an array of strings that are useful when searching for packages in 
 }
 ```
 
-All packages should specify a license so that users know how they are permitted
-to use it and any restrictions that you are placing on it.
+所有的包都应该具体给出许可字段，只有这样用户才可以知道他们被许可哪些操作，以及避免您规定的限制。
 
-You are encouraged to use an Open Source
-([OSI-approved](https://opensource.org/licenses/alphabetical)) license unless
-you have a specific reason not to. If you built your package as part of your
-job it's likely best to check with your company before deciding on a license.
+推荐您使用开源的
+([OSI-approved](https://opensource.org/licenses/alphabetical)) 许可协议，
+除非您有特别的理由不使用它。
+如果您建立的包是用于您的工作，在您决定使用的许可协议前，您最好向您的公司进行询问。
 
-**Must be one of the following:**
+**必须是以下其中的一种：**
 
-- A valid [SPDX license identifier](https://spdx.org/licenses/) if you are
-  using a standard license.
-- A valid
-  [SPDX license expression syntax 2.0 expression](https://www.npmjs.com/package/spdx)
-  if you are using multiple standard licenses.
-- A `SEE LICENSE IN <filename>` string that points to a `<filename>` in the top
-  level of your package if you are using a non-standard license.
-- A `UNLICENSED` string if you do not want to grant others the right to use a
-  private or unpublished package under any terms.
+- 一个有效的 [SPDX 许可标识](https://spdx.org/licenses/)（如果您使用一个标准协议的话）。
+- 一个有效的
+  [SPDX 许可表达式语法 2.0 的表达式](https://www.npmjs.com/package/spdx)（如果您使用的是混合标准协议的话）。
+- 一个 `SEE LICENSE IN <filename>` 字符串，它指向您的包的顶级目录下的 `<filename>`
+（如果您要使用一个非标准协议的话）。
+- 一个 `UNLICENSED` 字符串（如果您不想准许任何人有权限使用您的包或者不发布您的包在任何条款下）。
 
-## Links <a class="toc" id="toc-links" href="#toc-links"></a>
+## 链接 <a class="toc" id="toc-links" href="#toc-links"></a>
 
-Various links to documentation, places to file issues and where your package code actually lives.
+各种链接，比如文档的链接、存放文件问题的链接以及包的代码存放的确切位置的链接。
 
 ### `homepage` <a class="toc" id="toc-homepage" href="#toc-homepage"></a>
 
@@ -124,7 +117,7 @@ Various links to documentation, places to file issues and where your package cod
 }
 ```
 
-The homepage is the URL to the landing page or documentation for your package.
+主页字段是一个 URL，用于链接到您的包的主页或者文档。
 
 ### `bugs` <a class="toc" id="toc-bugs" href="#toc-bugs"></a>
 
@@ -134,7 +127,8 @@ The homepage is the URL to the landing page or documentation for your package.
 }
 ```
 
-The URL to your project's issue tracker. This can also be something like an email address as well. It provides users a way to find out where to send issues with your package.
+一个用于项目问题追踪的链接。他也可以是其他的东西，比如说一个电子邮箱。
+它提供用户一个向您的包提交错误报告的途径。
 
 ### `repository` <a class="toc" id="toc-repository" href="#toc-repository"></a>
 
@@ -148,11 +142,11 @@ The URL to your project's issue tracker. This can also be something like an emai
 }
 ```
 
-The repository is the location where your the actual code for your package lives.
+仓库字段是您的实际代码所在位置。
 
-## Maintainers <a class="toc" id="toc-maintainers" href="#toc-maintainers"></a>
+## 维护者 <a class="toc" id="toc-maintainers" href="#toc-maintainers"></a>
 
-The maintainers of your project.
+您的包的项目维护者。
 
 ### `author` <a class="toc" id="toc-author" href="#toc-author"></a>
 
@@ -163,7 +157,7 @@ The maintainers of your project.
 }
 ```
 
-Package author information. An author is one person.
+包作者的信息。作者必须是一个人。
 
 ### `contributors` <a class="toc" id="toc-contributors" href="#toc-contributors"></a>
 
@@ -180,11 +174,11 @@ Package author information. An author is one person.
 }
 ```
 
-Those that have contributed to your package. Contributors are an array of people.
+哪些为您的包提交贡献的人。贡献者字段是一个数组。
 
-## Files <a class="toc" id="toc-files" href="#toc-files"></a>
+## 文件 <a class="toc" id="toc-files" href="#toc-files"></a>
 
-You can specify files that will be included in your project, along with the main entry point for your project.
+您可以指定那些将包含在您的项目中的文件，以及您的项目的主要入口点。
 
 ### `files` <a class="toc" id="toc-files" href="#toc-files"></a>
 
@@ -198,7 +192,8 @@ You can specify files that will be included in your project, along with the main
 }
 ```
 
-These are files that are included in your project. You can specify single files, whole directories or use wildcards to include files that meet a certain criteria.
+这些文件将会包含在您的项目中。
+您可以指定单独的文件、整个目录或是使用通配符来包括符合要求的文件。
 
 ### `main` <a class="toc" id="toc-main" href="#toc-main"></a>
 
@@ -208,7 +203,7 @@ These are files that are included in your project. You can specify single files,
 }
 ```
 
-This is the primary entry point for the functionality for your project.
+这是您的项目的功能的主要入口点。
 
 ### `bin` <a class="toc" id="toc-bin" href="#toc-bin"></a>
 
@@ -222,7 +217,7 @@ This is the primary entry point for the functionality for your project.
 }
 ```
 
-Executable files included with your project that will be installed.
+您项目中包含的可执行文件将会被安装。
 
 ### `man` <a class="toc" id="toc-man" href="#toc-man"></a>
 
@@ -233,7 +228,7 @@ Executable files included with your project that will be installed.
 }
 ```
 
-If you have man pages associated with your project, add them here.
+如果您有操作说明页面要和项目练习起来，把它们放在这里。
 
 ### `directories` <a class="toc" id="toc-directories" href="#toc-directories"></a>
 
@@ -249,11 +244,11 @@ If you have man pages associated with your project, add them here.
 }
 ```
 
-When installing your package, you can specify exact locations to put binary files, man pages, documentation, examples, etc.
+当安装您的包时，您可以指定特定的位置存放二进制文件，操作说明页面，文档，示例代码等等。
 
-## Tasks <a class="toc" id="toc-tasks" href="#toc-tasks"></a>
+## 任务 <a class="toc" id="toc-tasks" href="#toc-tasks"></a>
 
-Your package can include runnable scripts or other configuration.
+您的包可以包含可运行脚本或者其他的配置。
 
 ### `scripts` <a class="toc" id="toc-scripts" href="#toc-scripts"></a>
 
@@ -265,9 +260,14 @@ Your package can include runnable scripts or other configuration.
 }
 ```
 
-Scripts are a great way of automating tasks related to your package, such as simple build processes or development tools. Using the `"scripts"` field, you can define various scripts to be run as `yarn run <script>`. For example, the `build-project` script above can be invoked with `yarn run build-project` and will run `node build-project.js`.
+脚本字段对您的包来说是一个自动化任务的好途径，比如简单的构建过程或者开发工具。
+使用 `"scripts"` 字段，您能定义非常多的脚本，并且用 `yarn run <script>` 来运行。
+举个例子，上面的 `build-project` 脚本能够通过 `yarn run build-project` 唤起，
+并执行 `node build-project.js`。
 
-Certain script names are special. If defined, the `preinstall` script is called by yarn before your package is installed. For compatibility reasons, scripts called `install`, `postinstall`, and `prepublish` will all be called after your package has finished installing.
+某些脚本的名称非常的特殊。如果已定义，`preinstall` 脚本会在您的包安装前被 Yarn 调用。
+出于兼容性的问题，命名为 `install`、`postinstall` 和 `prepublish` 的脚本将会在您的包完成
+安装后调用。
 
 ### `config` <a class="toc" id="toc-config" href="#toc-config"></a>
 
@@ -279,11 +279,11 @@ Certain script names are special. If defined, the `preinstall` script is called 
 }
 ```
 
-Configuration options or parameters used in your scripts.
+您在包中使用的配置选项和参数。
 
-## Dependencies <a class="toc" id="toc-dependencies" href="#toc-dependencies"></a>
+## 依赖包 <a class="toc" id="toc-dependencies" href="#toc-dependencies"></a>
 
-Your package will very likely depend on other packages. You can specify those dependencies in your `package.json` file.
+您的包极有可能依赖于其他的包。您可以在 `package.json` 文件中指定那些被依赖的包。
 
 ### `dependencies` <a class="toc" id="toc-dependencies" href="#toc-dependencies"></a>
 
@@ -295,9 +295,9 @@ Your package will very likely depend on other packages. You can specify those de
 }
 ```
 
-These are dependencies that are required in both development and production for your package.
+这些依赖包将会同时被开发环境和生产环境所需要。
 
-> You can specify an exact version, a minimum version (e.g., `>=`) or a range of versions (e.g. `>= ... <`).
+> 您可以指定特定的版本号，最小版本号（示例，`>=`）或者一个版本号的范围（示例，`>= ... <`）。
 
 ### `devDependencies` <a class="toc" id="toc-devdependencies" href="#toc-devdependencies"></a>
 
@@ -309,7 +309,7 @@ These are dependencies that are required in both development and production for 
 }
 ```
 
-These are packages that are only required when developing your package but will not be installed in production.
+这些包仅在开发您的包的时候被需要，他们不会安装在生产环境下。
 
 ### `peerDependencies` <a class="toc" id="toc-peerdependencies" href="#toc-peerdependencies"></a>
 
@@ -321,7 +321,7 @@ These are packages that are only required when developing your package but will 
 }
 ```
 
-Peer dependencies allow you to state compatibility of your package with versions of other packages.
+对等的依赖关系允许您将包的版本与其他包的版本兼容。
 
 ### `optionalDependencies` <a class="toc" id="toc-optionaldependencies" href="#toc-optionaldependencies"></a>
 
@@ -333,7 +333,7 @@ Peer dependencies allow you to state compatibility of your package with versions
 }
 ```
 
-Optional dependencies can be used with your package, but are not required. If the optional package is not found, installation still continues.
+可选的依赖包可以与您的包一起使用，但不是必须。如果未找到可选包，安装仍将继续。
 
 ### `bundledDependencies` <a class="toc" id="toc-bundleddependencies" href="#toc-bundleddependencies"></a>
 
@@ -345,7 +345,7 @@ Optional dependencies can be used with your package, but are not required. If th
 }
 ```
 
-Bundled dependencies are an array of package names that will be bundled together when publishing your package.
+捆绑依赖包字段是一个包名数组，当您发布您的包时，它们将与您的包捆绑在一起。
 
 ### `flat` <a class="toc" id="toc-flat" href="#toc-flat"></a>
 
@@ -355,13 +355,13 @@ Bundled dependencies are an array of package names that will be bundled together
 }
 ```
 
-If your package only allows one version of a given dependency, and you'd like to enforce the same behavior as [`yarn install --flat`]({{url_base}}/docs/cli/install#toc-yarn-install-flat) on the command line, set this to `true`.
+如果您的包只允许一个给定版本的依赖，而且您希望安装行为强制与 [`yarn install --flat`]({{url_base}}/docs/cli/install#toc-yarn-install-flat)命令保持一致，请将该字段设置为 `true`。
 
-Note that if your `package.json` contains `"flat": true` and other packages depend on yours (e.g. you are building a library rather than an application), those other packages will also need `"flat": true` in their `package.json` or be installed with `yarn install --flat` on the command line.
+注意，如果您的 `package.json` 包含 `"flat": true` 并且别的包依赖于您的包（比如说，您构建的是一个库而不是一个应用）, 那么，这些包同样需要 `"flat": true` 在它们的 `package.json` 文件中，或者通过 `yarn install --flat` 指令来安装。
 
-## System <a class="toc" id="toc-system" href="#toc-system"></a>
+## 系统 <a class="toc" id="toc-system" href="#toc-system"></a>
 
-You can provide system-level information associated with your package, such as operating system compatibility, etc.
+您能给您的包提供系统级的信息，比如操作系统兼容性等。
 
 ### `engines` <a class="toc" id="toc-engines" href="#toc-engines"></a>
 
@@ -375,7 +375,7 @@ You can provide system-level information associated with your package, such as o
 }
 ```
 
-The engines specify versions of clients that must be used with your package. This checks against `process.versions` as well as the current version of yarn.
+引擎字段指定了使用您的包所必须的客户端的版本号。它会检查 `process.versions` 对象，以及 Yarn 当前版本。
 
 ### `os` <a class="toc" id="toc-os" href="#toc-os"></a>
 
@@ -386,7 +386,7 @@ The engines specify versions of clients that must be used with your package. Thi
 }
 ```
 
-This specifies operating system compatibility for your package. It checks against `process.platform`.
+该字段指定您的包的操作系统的兼容性。它会检查 `process.platform` 对象。
 
 ### `cpu` <a class="toc" id="toc-cpu" href="#toc-cpu"></a>
 
@@ -397,9 +397,9 @@ This specifies operating system compatibility for your package. It checks agains
 }
 ```
 
-Use this to specify your package will only run on certain CPU architectures. This checks against `process.arch`.
+使用该字段指定您的包仅在特定结构的 CPU 上运行。它会检查 `process.arch` 对象。
 
-## Publishing <a class="toc" id="toc-publishing" href="#toc-publishing"></a>
+## 发布 <a class="toc" id="toc-publishing" href="#toc-publishing"></a>
 
 ### `private` <a class="toc" id="toc-private" href="#toc-private"></a>
 
@@ -409,7 +409,7 @@ Use this to specify your package will only run on certain CPU architectures. Thi
 }
 ```
 
-If you do not want your package published in a package manager, set this to `true`.
+如果您不希望您的包被发布到包管理器，请设置该字段为 `true`。
 
 ### `publishConfig` <a class="toc" id="toc-publishconfig" href="#toc-publishconfig"></a>
 
@@ -421,4 +421,4 @@ If you do not want your package published in a package manager, set this to `tru
 }
 ```
 
-These configuration values will be used when publishing your package. You can tag your package, for example.
+这些配置选项将在您发布包的时候使用。比如说，您能给您的包添加一个标签。

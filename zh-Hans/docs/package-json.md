@@ -361,7 +361,7 @@ https://registry.npmjs.org/[name]/-/[name]-[version].tgz
 
 ## 系统 <a class="toc" id="toc-system" href="#toc-system"></a>
 
-您能给您的包提供系统级的信息，比如操作系统兼容性，等。
+您能给您的包提供系统级的信息，比如操作系统兼容性等。
 
 ### `engines` <a class="toc" id="toc-engines" href="#toc-engines"></a>
 

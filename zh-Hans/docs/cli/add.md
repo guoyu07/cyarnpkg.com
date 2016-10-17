@@ -7,92 +7,77 @@ additional_reading_tags: ["dependencies"]
 
 {% include vars.html %}
 
-<p class="lead">Installs a package and any packages that it depends on.</p>
+<p class="lead">安装一个包以及它所依赖的所有包。</p>
 
-### Adding dependencies <a class="toc" id="toc-adding-dependencies" href="#toc-adding-dependencies"></a>
+<a class="toc" id="toc-adding-dependencies" href="#toc-adding-dependencies"></a>
 
-When you want to use another package, you first need to add it to your
-dependencies. This means running `yarn add [package-name]` to install it into
-your project.
+### 添加依赖
 
-This will also update your `package.json` and your `yarn.lock` so that other
-developers working on the project will get the same dependencies as you when
-they run `yarn` or `yarn install`.
+当你想使用一个包的时候，你需要先把他加到你的依赖中。可以运行 `yarn add [pakcage-name]` 将它安装到你的项目中。
 
-Most packages will be installed from the [npm registry](https://www.npmjs.com/)
-and referred to by simply their package name. For example, `yarn add react`
-will install the [`react`](https://www.npmjs.com/package/react) package from
-the npm registry.
+这同时会更新你的 `package.json` 和 `yarn.lock`，其他开发者在开发这个项目的时候，可以运行 `yarn` 或 `yarn install` 就会安装到完全相同的依赖了。
 
-You can specify versions using one of these:
+大部分包可以通过包名从 [npm registry](https://www.npmjs.com) 中安装。比如： `yarn add react` 将会从 npm registry 中安装 [`react`](https://www.npmjs.com/package/react)。
 
-1. `yarn add package-name` installs the "latest" version of the package.
-2. `yarn add package-name@1.2.3` installs a specific version of a package from
-  the registry.
-3. `yarn add package-name@tag` installs a specific
-  ["tag"]({{url_base}}/docs/cli/tag) (e.g. `beta`, `next`, or `latest`).
+你可以用以下方式指定特定的版本：
 
-In general, a package is simply a folder with code and a `package.json` file
-that describes the contents. You can refer to a package a number of different
-ways:
+1. `yarn add package-name` 会安装这个包的最新版本。
+2. `yarn add package-name@1.2.3` 会安装一个特定的版本。
+3. `yarn add package-name@tag` 会安装一个特点的
+  ["tag"]({{url_base}}/docs/cli/tag)（比如 `beta`、`next` 或 `latest`）。
 
-You can also specify packages from different locations:
+一般来说，一个包就是一个包含代码和描述文件 `package.json` 的文件夹。
+你可以通过不同的方式指定一个包：
 
-1. `yarn add package-name` installs the package from the
-  [npm registry](https://www.npmjs.com/) unless you have specified another one
-  in your `package.json`.
-2. `yarn add file:/path/to/local/folder` installs a package that is on your
-  local file system. This is useful to test out other packages of yours that
-  haven't been published to the registry.
-3. `yarn add file:/path/to/local/tarball.tgz` installs a package from a gzipped
-  tarball which could be used to share a package before publishing it.
-4. `yarn add <git remote url>` installs a package from a remote git repository.
-5. `yarn add https://my-project.org/package.tgz` installs a package from a
-  remote gzipped tarball.
+1. `yarn add package-name` 会从 [npm registry](https://www.npmjs.com/)
+  中安装包，除非你在 `package.json` 中指定了其他源。
+2. `yarn add file:/path/to/local/folder` 会从你的文件系统中安装包。
+  这个方式经常用于测试那些还没有发布的包。
+3. `yarn add file:/path/to/local/tarball.tgz` 会从压缩文件中安装包。
+  常用于在发布前把包共享给其他人。
+4. `yarn add <git remote url>` 会从 git 仓库中安装包。
+5. `yarn add https://my-project.org/package.tgz` 会从远程的压缩文件中安装包。
 
-### Caveats <a class="toc" id="toc-caveats" href="#toc-caveats"></a>
+<a class="toc" id="toc-caveats" href="#toc-caveats"></a>
 
-If you have used a package manager like npm previously, you may be looking for
-how to add global dependencies.
+### 警告
 
-For the vast majority of packages it is considered a bad practice to have
-global dependencies because they are implicit. It is much better to add
-all of your dependencies locally so that they are explicit and anyone else
-using your project gets the same set of dependencies.
+如果你以前用过包管理器，比如 npm，那么你可能想知道如何安装一个全局的依赖。
 
-If you are trying to use a CLI tool that has a `bin` you can access these in
-your `./node_modules/.bin` directory.
+对于绝大多数包，有全局依赖是一个不好的做法，因为它们是隐式的。
+最好是在本地添加所有的依赖，这样的话它们就是显式的，任何使用你的项目的人都将获得相同的依赖关系。
+
+如果你想使用一些带命令行工具的包，那么你可以在 `./node_modules/.bin` 中找到它。
 
 ##### `yarn add <package...>` <a class="toc" id="toc-yarn-add" href="#toc-yarn-add"></a>
 
-This will install a `<package>` in your
+这将会安装 `<package>` 到
 [`dependencies`]({{url_base}}/docs/dependency-types#toc-dependencies).
 
 ##### `yarn add <package...> --dev` <a class="toc" id="toc-yarn-add-dev" href="#toc-yarn-add-dev"></a>
 
-This will install a `<package>` in your
+这将会安装 `<package>` 到
 [`devDependencies`]({{url_base}}/docs/dependency-types#toc-dev-dependencies).
 
 ##### `yarn add <package...> --peer` <a class="toc" id="toc-yarn-add-peer" href="#toc-yarn-add-peer"></a>
 
-This will install a `<package>` in your
+这将会安装 `<package>` 到
 [`peerDependencies`]({{url_base}}/docs/dependency-types#toc-peer-dependencies).
 
 ##### `yarn add <package...> --optional` <a class="toc" id="toc-yarn-add-optional" href="#toc-yarn-add-optional"></a>
 
-This will install a `<package>` in your
+这将会安装 `<package>` 到
 [`optionalDependencies`]({{url_base}}/docs/dependency-types#toc-optional-dependencies).
 
 ##### `yarn add <package...> --exact` <a class="toc" id="toc-yarn-add-exact" href="#toc-yarn-add-exact"></a>
 
-This installs the package as an exact version. The default is to use the most
-recent release with the same major version. For example, `yarn add foo@1.2.3`
-would accept version `1.9.1`, but `yarn add foo@1.2.3 --exact` would only
-accept version `1.2.3`.
+这将会安装一个包的精确版本。
+而默认情况下会安装相同大版本号的最新版本。
+比如 `yarn add foo@1.2.3` 就可以接受 `1.9.1`，
+但是 `yarn add foo@1.2.3 --exact` 将会安装 `1.2.3`。
 
 ##### `yarn add <package...> --tilde` <a class="toc" id="toc-yarn-add-tilde" href="#toc-yarn-add-tilde"></a>
 
-This installs the most recent release of the package that has the same minor
-version. The default is to use the most recent release with the same major
-version. For example, `yarn add foo@1.2.3 --tilde` would accept `1.2.9` but not
-`1.3.0`.
+这将会安装一个包的次版本号的最新版本。
+而默认情况下会安装相同大版本号的最新版本。
+比如 `yarn add foo@1.2.3 --tilde` 可以接受 `1.2.9` 而不接受 `1.3.0`。

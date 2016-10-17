@@ -23,7 +23,7 @@
     <title>使用版本控制 | Yarn</title>
     <meta name="description" content="快速、可靠、安全的依赖管理工具。">
 
-    <link rel="stylesheet" href="/css/main.css?t=2016-10-14T17:04:40+08:00">
+    <link rel="stylesheet" href="/css/main.css?t=2016-10-17T19:22:50+08:00">
     <link rel="canonical" href="https://yarnpkg.com/zh-Hans/docs/version-control">
     <link rel="alternate" type="application/rss+xml" title="Yarn" href="https://yarnpkg.com/feed.xml" />
 
@@ -319,6 +319,33 @@
         
 
         
+          <div class="alert alert-danger">
+            <h4>Yarn Website Internal Developer Warning!</h4>
+
+            <p>This page contains this heading:</p>
+
+            <pre><code>### 必要文件 &lt;a class=&quot;toc&quot; id=&quot;toc-required-files&quot; href=&quot;#toc-required-files&quot;&gt;&lt;/a&gt;</code></pre>
+
+            <p>
+              All headings need a table of contents "toc" link, you have either
+              left it out or are using the "wrong" one. Please use this one:
+            </p>
+
+            <pre><code>&lt;a class=&quot;toc&quot; id=&quot;toc-必要文件&quot; href=&quot;#toc-必要文件&quot;&gt;&lt;/a&gt;</code></pre>
+
+            <p>
+              Even if this is not your fault, please correct the error. Also
+              if there is an existing toc, please check that any links on the
+              website to this heading are correct (just search for the previous
+              toc id).
+            </p>
+
+            <p>
+              If you believe you are seeing this warning by mistake, please open
+              an issue.
+            </p>
+          </div>
+        
       
     
   
@@ -398,20 +425,20 @@
 
 
     <div class="guide-content">
-      <p>To have people successfully develop or use your package, you need to ensure that all the necessary files are checked into your source control system.</p>
+      <p>为了让其他人能够成功地开发或使用您的包，您需要确保您的源代码管理系统中已包含所有必要的文件。</p>
 
-<h3 id="required-files-a-classtoc-idtoc-required-files-hreftoc-required-filesa">Required Files <a class="toc" id="toc-required-files" href="#toc-required-files"></a></h3>
+<h3 id="a-classtoc-idtoc-required-files-hreftoc-required-filesa">必要文件 <a class="toc" id="toc-required-files" href="#toc-required-files"></a></h3>
 
-<p>The following files must be checked into source control for anyone to be able to manage your package:</p>
+<p>要让任何人能够管理您的包，下列文件必须确保被源代码管理系统包含：</p>
 
 <ul>
-  <li><code class="highlighter-rouge">package.json</code>: This has all the current dependencies for your package.</li>
-  <li><code class="highlighter-rouge">yarn.lock</code>: This stores the exact versions of each dependency for your package.</li>
-  <li>The actual source code that provides the functionality for your package.</li>
+  <li><code class="highlighter-rouge">package.json</code>: 该文件记录了您的包的当前版本的所有依赖。</li>
+  <li><code class="highlighter-rouge">yarn.lock</code>: 该文件记录了所有依赖的确切版本号。</li>
+  <li>其他能够为您的包提供实际功能的确切代码。</li>
 </ul>
 
 <blockquote>
-  <p>Check out the <a href="https://github.com/yarnpkg/example-yarn-package">Yarn Example Package</a> for the minimum requirements necessary for a Yarn package.</p>
+  <p>项目 <a href="https://github.com/yarnpkg/example-yarn-package">Yarn Example Package</a> 展示了一个 Yarn 包的最小依赖。</p>
 </blockquote>
 
     </div>

@@ -23,7 +23,7 @@
     <title>安装 | Yarn</title>
     <meta name="description" content="快速、可靠、安全的依赖管理工具。">
 
-    <link rel="stylesheet" href="/css/main.css?t=2016-10-14T17:04:40+08:00">
+    <link rel="stylesheet" href="/css/main.css?t=2016-10-17T19:22:50+08:00">
     <link rel="canonical" href="https://yarnpkg.com/zh-Hans/docs/install">
     <link rel="alternate" type="application/rss+xml" title="Yarn" href="https://yarnpkg.com/feed.xml" />
 
@@ -907,89 +907,81 @@
     </div>
     <div class="tab-pane" id="mac"><h3 id="macos">macOS</h3>
 
-<p>You will need to first
-<a href="https://nodejs.org/">install Node.js</a> if you don’t already have it installed.</p>
+<p>如果你还没有安装 <a href="https://nodejs.org/">Node.js</a>，那么你需要首先 <a href="https://nodejs.org/">安装 Node.js</a>。</p>
 
 <h4 id="homebrew">Homebrew</h4>
 
-<p>You can install Yarn through the <a href="http://brew.sh/">Homebrew package manager</a>.
-This will also install Node.js if it is not already installed.</p>
+<p>你可以通过 <a href="http://brew.sh/">Homebrew 包管理工具</a> 安装Yarn，当你未安装 Node.js 时，这个操作将自动为你安装 Node.js。</p>
 
 <div class="language-sh highlighter-rouge"><pre class="rougeHighlight"><code>brew update
 brew install yarn
 </code></pre>
 </div>
 
-<h4 id="installation-script">Installation Script</h4>
+<h4 id="section">安装脚本</h4>
 
-<p>One of the easiest ways to install Yarn on macOS and generic Unix environments
-is via our shell script. You can install Yarn by running the following code in
-your terminal:</p>
+<p>一种最简单的在 macOS 和 通用的 UNIX 环境中安装 Yarn 的方式是通过我们的 shell 脚本。
+你可以在终端中运行以下命令来安装 Yarn：</p>
 
 <div class="language-sh highlighter-rouge"><pre class="rougeHighlight"><code>curl -o- -L https://yarnpkg.com/install.sh | bash
 </code></pre>
 </div>
 
-<h4 id="manual-install-via-tarball">Manual Install via tarball</h4>
+<h4 id="section-1">通过压缩包安装</h4>
 
-<p>You can install Yarn by <a href="/latest.tar.gz">downloading a tarball</a> and
-extracting it anywhere.</p>
+<p>你可以通过 <a href="/latest.tar.gz">下载压缩包</a> 来随地提取和安装 Yarn。</p>
 
 <div class="language-sh highlighter-rouge"><pre class="rougeHighlight"><code><span class="nb">cd</span> /opt
 wget https://yarnpkg.com/latest.tar.gz
 tar zvxf yarn-<span class="k">*</span>.tar.gz
-<span class="c"># Yarn is now in /opt/yarn-[version]/</span>
+<span class="c"># Yarn 现在在 /opt/yarn-[version]/</span>
 </code></pre>
 </div>
 
 <h4 id="path-setup">Path Setup</h4>
 
-<p>You will need to set up the <code class="highlighter-rouge">PATH</code> environment variable in your terminal to have access to Yarn’s binaries globally.</p>
+<p>你需要设置你终端的 <code class="highlighter-rouge">PATH</code> 环境变量，以便全局的访问 Yarn 的二进制文件。</p>
 
-<p>Add <code class="highlighter-rouge">export PATH="$HOME/.yarn/bin:$PATH"</code> to your profile (this may be in your <code class="highlighter-rouge">.profile</code>, <code class="highlighter-rouge">.bashrc</code>, <code class="highlighter-rouge">.zshrc</code>, etc.)</p>
-
+<p>添加 <code class="highlighter-rouge">export PATH="$HOME/.yarn/bin:$PATH"</code> 到你的 profile 文件（这可能是你的 <code class="highlighter-rouge">.profile</code>, <code class="highlighter-rouge">.bashrc</code>, <code class="highlighter-rouge">.zshrc</code> 等文件）。</p>
 </div>
     <div class="tab-pane" id="windows"><h3 id="windows">Windows</h3>
 
-<p>There are two options for installing Yarn on Windows.</p>
+<p>在 Windows 上有 2 种方式来安装 Yarn。</p>
 
-<h4 id="download-the-installer">Download the installer</h4>
+<h4 id="section">下载安装程序</h4>
 
-<p>This will give you a <code class="highlighter-rouge">.msi</code> file that when run will walk you through installing
-Yarn on Windows.</p>
+<p>你可以在 Windows 上获取 <code class="highlighter-rouge">.msi</code> 文件，运行时将引导你完成 Yarn 的安装。</p>
 
-<p>If you use the installer you will first need to install
-<a href="https://nodejs.org/">Node.js</a>.</p>
+<p>如果你使用安装程序的方式，你首先需要安装 <a href="https://nodejs.org/">Node.js</a>。</p>
 
-<p><a class="btn btn-primary" href="/latest.msi">Download Installer</a></p>
+<p><a class="btn btn-primary" href="/latest.msi">安装程序下载</a></p>
 
-<h4 id="install-via-chocolatey">Install via Chocolatey</h4>
+<h4 id="chocolatey-">通过 Chocolatey 安装</h4>
 
-<p>A Chocolatey package is coming soon!</p>
+<p>我们即将提供 Chocolatey 包的方式！</p>
 
-<p><strong>Note:</strong> Yarn is currently incompatible with installation via Ubuntu on Windows awaiting a resolution to 
+<p><strong>Note:</strong> Yarn 目前不兼容通过 Ubuntu on Windows 进行安装，请等待解决。
 <a href="https://github.com/Microsoft/BashOnWindows/issues/468">468</a></p>
 
 <h4 id="path-setup">Path Setup</h4>
 
-<p>You will need to set up the <code class="highlighter-rouge">PATH</code> environment variable in your terminal to have access to Yarn’s binaries globally.</p>
+<p>你需要设置你终端的 <code class="highlighter-rouge">PATH</code> 环境变量，以便全局的访问 Yarn 的二进制文件。</p>
 
-<p>Add <code class="highlighter-rouge">set PATH=%PATH%;C:\.yarn\bin"</code> to your shell environment.</p>
-
+<p>添加 <code class="highlighter-rouge">set PATH=%PATH%;C:\.yarn\bin"</code> 到你的 shell 环境中。</p>
 </div>
     <div class="tab-pane" id="linux"><h3 id="debianubuntu-linux">Debian/Ubuntu Linux</h3>
 
-<p>On Debian or Ubuntu Linux, you can install Yarn via our Debian package
-repository. You will first need to configure the repository:</p>
+<p>在 Debian 或者 Ubuntu 操作系统上，你可以通过 Debian 的包仓库来安装 Yarn。
+在这之前，你需要配置仓库：</p>
 
 <div class="language-sh highlighter-rouge"><pre class="rougeHighlight"><code>sudo apt-key adv --keyserver pgp.mit.edu --recv D101F7899D41F3C3
 <span class="nb">echo</span> <span class="s2">"deb http://dl.yarnpkg.com/debian/ stable main"</span> | sudo tee /etc/apt/sources.list.d/yarn.list
 </code></pre>
 </div>
 
-<p>On Ubuntu 14.04 and Debian Stable, you will also need to configure <a href="https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions">the NodeSource repository</a> to get a new enough version of Node.js (Debian Testing and Ubuntu 16.04 come packaged with a sufficient version of Node.js, so this step is not required in those environments)</p>
+<p>在 Ubuntu 14.04 和 Debian 稳定版中，你还需要配置 <a href="https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions">Node 源仓库</a> 来获取足够新版本的 Node.js （Debian 测试版和 Ubuntu16.04 会配置较新的 Node.js 版本，所以在这些环境中可以跳过这步）。</p>
 
-<p>Then you can simply:</p>
+<p>然后运行：</p>
 
 <div class="language-sh highlighter-rouge"><pre class="rougeHighlight"><code>sudo apt-get update <span class="o">&amp;&amp;</span> sudo apt-get install yarn
 </code></pre>
@@ -997,83 +989,83 @@ repository. You will first need to configure the repository:</p>
 
 <h3 id="centos--fedora--rhel">CentOS / Fedora / RHEL</h3>
 
-<p>On CentOS, Fedora and RHEL, you can install Yarn via our RPM package repository.</p>
+<p>在 CentOS, Fedora 和 RHEL 操作系统上，你可以通过我们的 RPM 包仓库来安装 Yarn。</p>
+
 <div class="language-sh highlighter-rouge"><pre class="rougeHighlight"><code>sudo wget https://dl.yarnpkg.com/rpm/yarn.repo -O /etc/yum.repos.d/yarn.repo
 </code></pre>
 </div>
 
-<p>If you do not already have Node.js installed, you should also configure
-<a href="https://nodejs.org/en/download/package-manager/#enterprise-linux-and-fedora">the NodeSource repository</a>:</p>
+<p>如果你尚未安装 Node.js，你应该配置 <a href="https://nodejs.org/en/download/package-manager/#enterprise-linux-and-fedora">Node 源仓库</a>：</p>
+
 <div class="language-sh highlighter-rouge"><pre class="rougeHighlight"><code>curl --silent --location https://rpm.nodesource.com/setup_6.x | bash -
 </code></pre>
 </div>
 
-<p>Then you can simply:</p>
+<p>然后运行：</p>
+
 <div class="language-sh highlighter-rouge"><pre class="rougeHighlight"><code>sudo yum install yarn
 </code></pre>
 </div>
 
 <h3 id="arch-linux">Arch Linux</h3>
 
-<p>On Arch Linux yarn can be installed through the <strong>AUR</strong>.</p>
+<p>在 Arch 操作系统上，你可以通过 <strong>AUR</strong> 来进行安装。</p>
 
-<p>If you use an <a href="https://wiki.archlinux.org/index.php/AUR_helpers">AUR Helper</a> such as yaourt you can simply run:</p>
+<p>如果你使用 yaourt 这样的 <a href="https://wiki.archlinux.org/index.php/AUR_helpers">AUR Helper</a> 工具，你可以简单地运行：</p>
+
 <div class="language-sh highlighter-rouge"><pre class="rougeHighlight"><code>yaourt -S yarn
 </code></pre>
 </div>
 
 <h3 id="solus">Solus</h3>
 
-<p>On Solus, you can install yarn via the Solus repository.</p>
+<p>在 Solus 操作系统中，你可以通过 Solus 仓库来安装 Yarn。</p>
+
 <div class="language-sh highlighter-rouge"><pre class="rougeHighlight"><code>sudo eopkg install yarn
 </code></pre>
 </div>
 
 <h3 id="path-setup">Path Setup</h3>
 
-<p>You will need to set up the <code class="highlighter-rouge">PATH</code> environment variable in your terminal to have access to Yarn’s binaries globally.</p>
+<p>你需要设置你终端的 <code class="highlighter-rouge">PATH</code> 环境变量，以便全局的访问 Yarn 的二进制文件。</p>
 
-<p>Add <code class="highlighter-rouge">export PATH="$HOME/.yarn/bin:$PATH"</code> to your profile (this may be in your <code class="highlighter-rouge">.profile</code>, <code class="highlighter-rouge">.bashrc</code>, <code class="highlighter-rouge">.zshrc</code>, etc.)</p>
-
+<p>添加 <code class="highlighter-rouge">export PATH="$HOME/.yarn/bin:$PATH"</code> 到你的 profile 文件（这可能是你的 <code class="highlighter-rouge">.profile</code>, <code class="highlighter-rouge">.bashrc</code>, <code class="highlighter-rouge">.zshrc</code> 等文件）。</p>
 </div>
-    <div class="tab-pane" id="alternatives"><h3 id="alternatives">Alternatives</h3>
+    <div class="tab-pane" id="alternatives"><h3 id="section">其他选项</h3>
 
-<p>If you are using another OS or one of the other options specific to your OS
-will not work for you, there are a couple of alternatives. You will need to
-<a href="https://nodejs.org/">install Node.js</a> if you don’t already have it installed.</p>
+<p>如果你正在使用其他操作系统或者特定于你的操作系统的安装方案没有效果，这里有几种替代方案。</p>
 
-<p>On common Linux distributions such as Debian, Ubuntu and CentOS, it is
-recommended to install Yarn via our packages instead.</p>
+<p>如果你还没有安装 Node.js 的话，你应该首先安装 <a href="https://nodejs.org/">Node.js</a>。</p>
 
-<h4 id="installation-script">Installation Script</h4>
+<p>常见的 Linux 发行版比如 Debian, Ubuntu 和 Centos，建议通过我们的包安装 Yarn。</p>
 
-<p>One of the easiest ways to install Yarn on macOS and generic Unix environments
-is via our shell script. You can install Yarn by running the following code in
-your terminal:</p>
+<h4 id="section-1">安装脚本</h4>
+
+<p>一种最简单的在 macOS 和 通用的 UNIX 环境中安装 Yarn 的方式是通过我们的 shell 脚本。
+你可以在终端中运行以下命令来安装 Yarn：</p>
 
 <div class="language-sh highlighter-rouge"><pre class="rougeHighlight"><code>curl -o- -L https://yarnpkg.com/install.sh | bash
 </code></pre>
 </div>
 
-<h4 id="manual-install-via-tarball">Manual Install via tarball</h4>
+<h4 id="section-2">通过压缩包安装</h4>
 
-<p>You can install Yarn by <a href="/latest.tar.gz">downloading a tarball</a> and
-extracting it anywhere.</p>
+<p>你可以通过 <a href="/latest.tar.gz">下载压缩包</a> 来随地提取和安装 Yarn。</p>
 
 <div class="language-sh highlighter-rouge"><pre class="rougeHighlight"><code><span class="nb">cd</span> /opt
 wget https://yarnpkg.com/latest.tar.gz
 tar zvxf yarn-<span class="k">*</span>.tar.gz
-<span class="c"># Yarn is now in /opt/yarn-[version]/</span>
+<span class="c"># Yarn 现在在 /opt/yarn-[version]/</span>
 </code></pre>
 </div>
 
-<h4 id="install-via-npm">Install via npm</h4>
+<h4 id="npm-">通过 npm 安装</h4>
 
-<p>You can also install Yarn through the <a href="http://npmjs.org/">npm package manager</a>
-if you already have it installed. If you already have
-<a href="https://nodejs.org/">Node.js</a> installed then you should already have npm.</p>
+<p>如果你安装了 npm 的话，你也可以通过 <a href="http://npmjs.org/">npm包管理工具</a> 来安装 Yarn。</p>
 
-<p>Once you have npm installed you can run:</p>
+<p>如果你已经安装 <a href="https://nodejs.org/">Node.js</a>，那么你就已经安装了 npm。</p>
+
+<p>一旦安装了npm，你可以运行以下命令安装 Yarn：</p>
 
 <div class="language-sh highlighter-rouge"><pre class="rougeHighlight"><code>npm install --global yarn
 </code></pre>
@@ -1083,16 +1075,15 @@ if you already have it installed. If you already have
 
 <h4 id="unixlinuxmacos">Unix/Linux/macOS</h4>
 
-<p>You will need to set up the <code class="highlighter-rouge">PATH</code> environment variable in your terminal to have access to Yarn’s binaries globally.</p>
+<p>你需要设置你终端的 <code class="highlighter-rouge">PATH</code> 环境变量，以便全局的访问 Yarn 的二进制文件。</p>
 
-<p>Add <code class="highlighter-rouge">export PATH="$HOME/.yarn/bin:$PATH"</code> to your profile (this may be in your <code class="highlighter-rouge">.profile</code>, <code class="highlighter-rouge">.bashrc</code>, <code class="highlighter-rouge">.zshrc</code>, etc.)</p>
+<p>添加 <code class="highlighter-rouge">export PATH="$HOME/.yarn/bin:$PATH"</code> 到你的 profile 文件（这可能是你的 <code class="highlighter-rouge">.profile</code>, <code class="highlighter-rouge">.bashrc</code>, <code class="highlighter-rouge">.zshrc</code> 等文件）。</p>
 
 <h4 id="windows">Windows</h4>
 
-<p>You will need to set up the <code class="highlighter-rouge">PATH</code> environment variable in your terminal to have access to Yarn’s binaries globally.</p>
+<p>你需要设置你终端的 <code class="highlighter-rouge">PATH</code> 环境变量，以便全局的访问 Yarn 的二进制文件。</p>
 
-<p>Add <code class="highlighter-rouge">set PATH=%PATH%;C:\.yarn\bin"</code> to your shell environment.</p>
-
+<p>添加 <code class="highlighter-rouge">set PATH=%PATH%;C:\.yarn\bin"</code> 到你的 shell 环境中。</p>
 </div>
   </div>
 </div>

@@ -1,5 +1,15 @@
 language: ruby
+rvm:
+- 2.3.1
+sudo: false
+branches:
+  only:
+  - master
+before_install:
+- git config --global user.email "xcatliu@gmail.com"
+- git config --global user.name "xcatliu"
+- gem install bundler
+install:
+- make install
 script:
-  - make crowdin-sync
-  - git add -A
-  - git push origin master:gh-pages
+- bash .travis/deploy.sh

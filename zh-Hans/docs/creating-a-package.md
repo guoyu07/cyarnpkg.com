@@ -6,21 +6,15 @@ layout: guide
 
 {% include vars.html %}
 
-A **package** is a directory with some code and a `package.json` file that
-provides information to Yarn about your package.
+一个**包**就是一个目录，这个目录中包含了您的代码以及一个描述包信息的 `package.json` 文件。
 
-Most packages use some kind of version control system. The most common one is
-git but Yarn doesn't mind whatever one you choose to use. For this guide, our
-examples are going to use git.
+大部分的包都会通过版本控制系统来管理代码，比如 git。Yarn 可以与任何一种版本控制系统协作，只不过在我们使用 git 来演示我们的例子。
 
-> **Note:** If you want to follow along with this guide, be sure to first
-> install [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)
-> and [Yarn]({{url_base}}/docs/install).
+> **注意：** 在阅读下面文章之前，请确保您已经安装了 [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) 和 [Yarn]({{url_base}}/docs/install)。
 
-### Creating your first package <a class="toc" id="toc-creating-your-first-package" href="#toc-creating-your-first-package"></a>
+### 创建您的第一个包 <a class="toc" id="toc-creating-your-first-package" href="#toc-creating-your-first-package"></a>
 
-In order to create your first package, open up your system terminal/console and
-run the following commands:
+运行下面的命令：
 
 ```sh
 git init my-new-project
@@ -28,9 +22,7 @@ cd my-new-project
 yarn init
 ```
 
-This is going to create a new git repository, put you inside of it, and then
-open up an interactive form for creating a new yarn project with the following
-questions:
+这将会创建一个新的 git 工程，进入 git 工程的根目录后，yarn 会创建一个交互式的表单问答卷：
 
 ```sh
 name (my-new-project):
@@ -42,15 +34,13 @@ author:
 license (MIT):
 ```
 
-You can type answers for each of these or you can just hit enter/return to use
-the default or leave it blank.
+您并不需要回答每一道问题，点击回车可以跳过问题。
 
-> **Tip:** If you want to use the defaults for everything you can also run
-> `npm init --yes` and it will skip all the questions.
-
+> **贴士：** `npm init --yes` 命令会跳过所有问题，那么您的表单会使用默认值。
+> 
 ### `package.json` <a class="toc" id="toc-package-json" href="#toc-package-json"></a>
 
-Now you should have a `package.json` that looks similar to this:
+执行完上述命令后，您会得到一个 `package.json` 文件，字段和内容如下：
 
 ```json
 {
@@ -67,30 +57,23 @@ Now you should have a `package.json` that looks similar to this:
 }
 ```
 
-The fields you see in the `package.json` have the following meanings:
+ `package.json` 文件中的字段：
 
-- **name** is the identifier of your package, if you are going to publish it to
-  the global registry, you need to be sure that it is unique.
-- **version** is the semver-compatible version of your package, you can publish
-  a package as much as you want but they must have new versions.
-- **description** is an optional but recommended field that gets used by other
-  Yarn users to search for and understand your project.
-- **main** is used to define the entry point of your code used by programs like
-  Node.js. If unspecified it will default to `index.js`.
-- **repository** is another optional but recommended field that helps users of
-  your package find the source code to contribute back.
-- **author** is the creator or maintainer of a package. It follows the format
-  `"Your Name <you@example.com> (http://your-website.com)"`
-- **license** is the published legal terms of your package and what is the
-  allowed usage of the code in your package.
+- **name** 包的名字，您需要确保您起的名字在包仓库中是唯一的，不与其他重复。
+- **version** 包的版本，符合 semver 规范。您可以发布任意多的版本，只要保证每次发布都是一个新版本。
+- **description** 包的描述，是一个可选项但是推荐填写。填写 `description` 可以帮助其他开发人员搜索和理解您的包。
+- **main** 包的入口，是其他程序用来调用包的入口文件。如果没有指定，那么默认为 `index.js`。
+- **repository** 包的代码仓库，是一个可选项但是推荐填写。填写 `repository` 有助于那些希望贡献代码的开发者能够找到您的源代码。
+- **author** 包的创建者或者维护者，格式：`"Your Name <you@example.com> (http://your-website.com)"`。
+- **license** 包的许可，是适用于您的包的法律条款以及您的代码能够被如何使用。
 
-When you run `yarn init`, all it is doing is creating this file, nothing
-happens in the background. You can feel free to edit this file as much as you
-want.
+当您运行 `yarn init` 命令，Yarn 所做的唯一一件事就是创建上面的 `package.json 文件`，您可以随意编辑这个文件。
 
-#### Additional fields <a class="toc" id="toc-additional-fields" href="#toc-additional-fields"></a>
 
-Let's go through some additional `package.json` fields you might want to add.
+
+#### 附加字段 <a class="toc" id="toc-additional-fields" href="#toc-additional-fields"></a>
+
+下面列出一些 `package.json` 中您可能会用到的附加字段。
 
 ```json
 {
@@ -114,62 +97,40 @@ Let's go through some additional `package.json` fields you might want to add.
 }
 ```
 
-- **keywords** is a list of terms that other developers can search for to find
-  your package or related packages.
-- **homepage** is a url to point users to a website that informs them on the
-  package with an introduction, documentations, and links to additional
-  resources.
-- **bugs** is a url to point users of your package to if they discover an issue
-  with your package.
-- **contributors** is a list of contributors to the package. If there are other
-  people involved in your project, you can specify them here.
-- **files** is a list of files that should be included in your package when
-  published and installed. If unspecified Yarn will include every file.
-- **bin** is a mapping of cli commands (binaries) for Yarn to create for the
-  package when installing it.
+- **keywords** 包的关键词，其他开发人员能够通过关键词搜索您的包。
+- **homepage** 包的主页链接，主页中应该包括包的介绍、文档和其他资源。
+- **bugs** 包的bug列表链接，用来报告包的 bug。
+- **contributors** 包的贡献者，如果有其他开发者对您对的包做了贡献，那么您可以把这些人列在 `contributors` 字段中。
+- **files** 包的文件，列出了您对包中那些文件是用来发布和安装的。如果没有指定，那么 Yarn 则认为是全部的文件。
+- **bin** 包的 bin，包含了包的 cli 命令。
 
-For a complete list of all the `package.json` fields and more details about
-each of the above fields please see the
-[`package.json` documentation]({{url_base}}/docs/package-json).
+如果想查看 `package.json` 所有的字段以及更多有关信息，请查看 [`package.json` 文档]({{url_base}}/docs/package-json)。
 
-### Licensing and open source <a class="toc" id="toc-licensing-and-open-source" href="#toc-licensing-and-open-source"></a>
+### 许可与开源 <a class="toc" id="toc-licensing-and-open-source" href="#toc-licensing-and-open-source"></a>
 
-Yarn packages are generally encouraged to be
-[open source](https://opensource.org/definition), however it's important to
-note that they aren't inherently open source by simply publishing them.
+Yarn 包通常是被鼓励[开源](https://opensource.org/definition)的，然而需要注意的是发布包并不代表着就是开源了。
 
-In order for code to be open source it needs to have an open source license.
-There are many open source licenses to choose from, here are a couple of common
-ones:
+每一个开源代码都需要指定一个许可，目前有很多许可可以选择，下面列出几种通用的许可供参考：
 
 - [MIT License](http://choosealicense.com/licenses/mit/)
 - [Apache License 2.0](http://choosealicense.com/licenses/apache-2.0/)
 - [GNU General Public License 3.0](http://choosealicense.com/licenses/gpl-3.0/)
 
-If you want more options, you can get
-[a more complete list here](http://choosealicense.com/licenses/).
+更多许可请查看[许可列表](http://choosealicense.com/licenses/)。
 
-When you select an open source license for your package, be sure to add a
-`LICENSE` file in the root of your package with the license text and update
-your `package.json` `license` field.
+一旦您选择了某一种许可，请在包的根目录添加 `LICENSE` 文件，并把许可种类添加到 `package.json` 的 `license` 字段。
 
-> **Note**: If you do not want your project to be licensed as an open source
-> project, you should be explicit about what the licensing is or if it is
-> unlicensed.
+> **注意**：如果您不想开源您的软件，那么在选择许可时一定要谨慎。
 
-### Code sharing <a class="toc" id="toc-code-sharing" href="#toc-code-sharing"></a>
+### 代码共享 <a class="toc" id="toc-code-sharing" href="#toc-code-sharing"></a>
 
-You will likely want to allow users of your package to be able to access your
-source code and have a way to report issues. There are a couple of popular
-websites for hosting your code:
+如果您希望您开发的包的用户能够贡献代码，或者发布一些 issue，您可以在网络中共享您的代码，下面有几个著名的代码仓库能够托管您的代码：
 
 - [GitHub](https://github.com)
 - [GitLab](https://about.gitlab.com/)
 - [Bitbucket](https://bitbucket.org/)
 
-These sites will allow your users to see your code, report issues, and
-contribute back. Once you have your code up somewhere you should add the
-following fields to your `package.json`:
+您的代码托管在上面之后，其他开发人员能够查看您的代码，提交issue，贡献代码。一旦您在网络中托管了您的代码，请在 `package.json` 文件中添加下面的字段：
 
 ```json
 {
@@ -182,34 +143,18 @@ following fields to your `package.json`:
 }
 ```
 
-### Documentation <a class="toc" id="toc-documentation" href="#toc-documentation"></a>
+### 文档 <a class="toc" id="toc-documentation" href="#toc-documentation"></a>
 
-You should ideally write your documentation before you go publishing your
-package. At a minimum you should write a `README.md` file in the root of your
-project that introduces your package and documents the public API.
+在发布包之前，最好为包编写文档。如果没有编写文档，最小限度也要在包的根目录创建一个 `README.md` 文件，包含包的介绍、文档以及API等信息。
 
-Good documentation is defined by giving users all the knowledge they'll need to
-get started with your project and continued use of it. Think about the
-questions someone who knows nothing about your project will have. Describe
-things accurately and as detailed as necessary, but also try to keep it brief
-and easy to read. **Projects with high quality documentation are far more
-successful.**
+好的文档能够让其他开发者尽快上手您的包，并在后续使用中提供帮助。考虑如果一个从来没有用过您的包的开发者会遇到什么问题。文档的编写要尽量的详细和准确，但是同时要保持简洁和易懂。**一个高质量的文档会让您的包更加好用和流行**。
 
 ### Keep packages small <a class="toc" id="toc-keep-packages-small" href="#toc-keep-packages-small"></a>
 
-When creating Yarn packages, you are encouraged to keep them small and simple.
-Break large packages into many small ones if it makes sense to do so. This is
-highly encouraged as Yarn is capable of installing hundreds or even thousands
-of packages very efficiently.
+Yarn 包建议是小巧和简单的。尽可能的把一个很大的包拆分成若干个小包。因为 Yarn 有能力在很短的时间内快速安装成数百上千的包，所以强烈建立采用小包的设计方式。
 
-Many small packages are a great model of package management. Often this leads
-to smaller download sizes because you aren't bundling massive dependencies and
-only using a small piece of it.
+对于包管理工具来说，小巧的包也是很好的。当安装这些依赖的时候，更小的包意味着更少依赖的数量，下载的文件数量和大小也会降低。
 
-You should also consider the contents of your package. Make sure you aren't
-accidentally distributing your tests or any other files that aren't necessary
-for using your package (build scripts, images, etc).
+每一次发布包都要谨慎，确保发布版本的代码中测试代码和其他不必要的代码。
 
-Also be careful of what packages you are depending on, prefer smaller
-dependencies unless you have a good reason not to. Be certain that you aren't
-accidentally depending on something massive.
+在选择依赖的时候也要十分谨慎，尽量选择依赖小而美的包。如果您要依赖一个很大的包，那么请确认这个依赖是必须的。

@@ -67,7 +67,7 @@ license (MIT):
 - **author** 包的创建者或者维护者，格式：`"Your Name <you@example.com> (http://your-website.com)"`。
 - **license** 包的许可，是适用于您的包的法律条款以及您的代码能够被如何使用。
 
-当您运行 `yarn init` 命令，Yarn 所做的唯一一件事就是创建上面的 `package.json 文件`，您可以随意编辑这个文件。
+当您运行 `yarn init` 命令，Yarn 所做的唯一一件事就是创建上面的 `package.json 文件`，您可以放心的随意编辑这个文件。
 
 
 

@@ -4,19 +4,15 @@ guide: docs_yarn_workflow
 layout: guide
 ---
 
-It doesn't matter if you have an existing repository/directory of code, or if
-you are starting a completely new project, adding Yarn works the same way every
-time.
+对于现有的项目，或者一个全新的项目，Yarn 的工作流程都是一样的。
 
-In your terminal/console in the directory that you want to add Yarn (which
-should almost always be the root of your project), run the following command:
+在你想添加 Yarn 的目录（通常都是项目的根目录），执行下面的命令：
 
 ```sh
 yarn init
 ```
 
-This will open up an interactive form for creating a new yarn project with the
-following questions:
+Yarn 首先会展示一个交互的问答卷，指导你填写一些项目信息：
 
 ```
 name (your-project):
@@ -27,13 +23,11 @@ git repository:
 author:
 license (MIT):
 ```
-
-You can type answers for each of these or you can just hit enter/return to use
-the default or leave it blank.
+所有问题都不是必答的，如果不想回答，点击回车可以跳过该问题，那么答案就会是默认值或者是空字符。
 
 ### `package.json` <a class="toc" id="toc-package-json" href="#toc-package-json"></a>
 
-Now you should have a `package.json` that looks similar to this:
+执行上面的命令后，你会得到一个 `package.json` 内容如下：
 
 ```json
 {
@@ -50,10 +44,6 @@ Now you should have a `package.json` that looks similar to this:
 }
 ```
 
-When you run `yarn init`, all it is doing is creating this file, nothing
-happens in the background. You can feel free to edit this file as much as you
-want.
+当你运行 `yarn init` 命令，Yarn 所做的唯一一件事就是创建上面的 `package.json 文件`，你可以放心的随意编辑这个文件。
 
-Your `package.json` is used to store info about your project. This includes the
-name of your project, the maintainers, where the source code lives, but most
-importantly what dependencies are needed to be installed for the project.
+`package.json` 中包含你项目的信息：名字、维护人员名单、源代码地址，其中最最重要的是你项目所需要安装的依赖。

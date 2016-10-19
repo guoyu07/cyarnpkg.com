@@ -5,7 +5,13 @@ sudo: false
 branches:
   only:
   - master
+# Handle git submodules yourself
+git:
+  submodules: false
+# Use sed to replace the SSH URL with the public URL, then initialize submodules
 before_install:
+- sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
+- git submodule update --init --recursive
 - git config --global user.email "xcatliu@gmail.com"
 - git config --global user.name "xcatliu"
 - gem install bundler

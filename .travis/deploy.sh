@@ -38,6 +38,11 @@ find . -maxdepth 1 ! -name . ! -name .git ! -name .gitignore | xargs rm -rf
 # rsync all contents
 rsync -avzh ../_site/ .
 
+if [ ! -n "$(git status --porcelain)" ]; then 
+  echo "There are no changes."
+  exit 0
+fi
+
 git add -A
 git commit -m "Deploy $CURRENT_COMMIT_HASH"
 git push origin gh-pages

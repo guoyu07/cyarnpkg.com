@@ -1,8 +1,10 @@
 # Yarnpkg 网站的中文翻译
 
+[![Build Status](https://travis-ci.org/xcatliu/cyarnpkg.com.svg?branch=master)](https://travis-ci.org/xcatliu/cyarnpkg.com)
+
 正在翻译成中文，将会提交 pr 到源仓库，欢迎一起来翻译。
 
-预览地址：http://yarnpkg.xcatliu.com/zh-Hans/
+预览地址：http://cyarnpkg.com/zh-Hans/
 
 相关 Issue：https://github.com/yarnpkg/website/issues/176
 
@@ -74,4 +76,6 @@ package | 包
 
 ## 感谢贡献
 
-感谢大家的贡献！
+感谢大家的翻译！
+
+感谢 [@yanyu0517](https://github.com/yanyu0517) [@shanggqm](https://github.com/shanggqm) 将 [yanyu0517/yarnpkgcn](https://github.com/yanyu0517/yarnpkgcn) 合并到 [xcatliu/cyarnpkg.com](https://github.com/xcatliu/cyarnpkg.com)！

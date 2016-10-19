@@ -23,7 +23,7 @@
     <title>创建新项目 | Yarn</title>
     <meta name="description" content="快速、可靠、安全的依赖管理工具。">
 
-    <link rel="stylesheet" href="/css/main.css?t=2016-10-19T11:01:22+00:00">
+    <link rel="stylesheet" href="/css/main.css?t=2016-10-19T11:40:51+00:00">
     <link rel="canonical" href="https://yarnpkg.com/zh-Hans/docs/creating-a-project">
     <link rel="alternate" type="application/rss+xml" title="Yarn" href="https://yarnpkg.com/feed.xml" />
 
@@ -278,19 +278,15 @@
 
 
     <div class="guide-content">
-      <p>It doesn’t matter if you have an existing repository/directory of code, or if
-you are starting a completely new project, adding Yarn works the same way every
-time.</p>
+      <p>对于现有的项目，或者一个全新的项目，Yarn 的工作流程都是一样的。</p>
 
-<p>In your terminal/console in the directory that you want to add Yarn (which
-should almost always be the root of your project), run the following command:</p>
+<p>在你想添加 Yarn 的目录（通常都是项目的根目录），执行下面的命令：</p>
 
 <div class="language-sh highlighter-rouge"><pre class="rougeHighlight"><code>yarn init
 </code></pre>
 </div>
 
-<p>This will open up an interactive form for creating a new yarn project with the
-following questions:</p>
+<p>Yarn 首先会展示一个交互的问答卷，指导你填写一些项目信息：</p>
 
 <div class="highlighter-rouge"><pre class="rougeHighlight"><code>name (your-project):
 version (1.0.0):
@@ -301,13 +297,11 @@ author:
 license (MIT):
 </code></pre>
 </div>
-
-<p>You can type answers for each of these or you can just hit enter/return to use
-the default or leave it blank.</p>
+<p>所有问题都不是必答的，如果不想回答，点击回车可以跳过该问题，那么答案就会是默认值或者是空字符。</p>
 
 <h3 id="packagejson-a-classtoc-idtoc-package-json-hreftoc-package-jsona"><code class="highlighter-rouge">package.json</code> <a class="toc" id="toc-package-json" href="#toc-package-json"></a></h3>
 
-<p>Now you should have a <code class="highlighter-rouge">package.json</code> that looks similar to this:</p>
+<p>执行上面的命令后，你会得到一个 <code class="highlighter-rouge">package.json</code> 内容如下：</p>
 
 <div class="language-json highlighter-rouge"><pre class="rougeHighlight"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-new-project"</span><span class="p">,</span><span class="w">
@@ -324,13 +318,9 @@ the default or leave it blank.</p>
 </span></code></pre>
 </div>
 
-<p>When you run <code class="highlighter-rouge">yarn init</code>, all it is doing is creating this file, nothing
-happens in the background. You can feel free to edit this file as much as you
-want.</p>
+<p>当你运行 <code class="highlighter-rouge">yarn init</code> 命令，Yarn 所做的唯一一件事就是创建上面的 <code class="highlighter-rouge">package.json 文件</code>，你可以放心的随意编辑这个文件。</p>
 
-<p>Your <code class="highlighter-rouge">package.json</code> is used to store info about your project. This includes the
-name of your project, the maintainers, where the source code lives, but most
-importantly what dependencies are needed to be installed for the project.</p>
+<p><code class="highlighter-rouge">package.json</code> 中包含你项目的信息：名字、维护人员名单、源代码地址，其中最最重要的是你项目所需要安装的依赖。</p>
 
     </div>
 

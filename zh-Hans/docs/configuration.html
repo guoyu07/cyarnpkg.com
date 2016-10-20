@@ -23,7 +23,7 @@
     <title>配置 | Yarn</title>
     <meta name="description" content="快速、可靠、安全的依赖管理工具。">
 
-    <link rel="stylesheet" href="/css/main.css?t=2016-10-20T03:29:07+00:00">
+    <link rel="stylesheet" href="/css/main.css?t=2016-10-20T06:31:38+00:00">
     <link rel="canonical" href="https://yarnpkg.com/zh-Hans/docs/configuration">
     <link rel="alternate" type="application/rss+xml" title="Yarn" href="https://yarnpkg.com/feed.xml" />
 
@@ -278,11 +278,11 @@
     <div class="guide-content">
       <!-- [TODO: Rewrite and accommodate for other configuration files] -->
 
-<h2 id="configuring-your-package-a-classtoc-idtoc-configuring-your-package-hreftoc-configuring-your-packagea">Configuring your package <a class="toc" id="toc-configuring-your-package" href="#toc-configuring-your-package"></a></h2>
+<h2 id="a-classtoc-idtoc-configuring-your-package-hreftoc-configuring-your-packagea">包的配置 <a class="toc" id="toc-configuring-your-package" href="#toc-configuring-your-package"></a></h2>
 
-<p>Yarn looks for <code class="highlighter-rouge">package.json</code> files to identify each package and configure the behavior of yarn while running inside that package.</p>
+<p>Yarn 包的配置文件是每一个包根目录下的 <code class="highlighter-rouge">package.json</code> 文件。</p>
 
-<p>An example configuration for the <code class="highlighter-rouge">pet-kitten</code> package, which would be found at <code class="highlighter-rouge">pet-kitten/package.json</code>:</p>
+<p>看一个 <code class="highlighter-rouge">pet-kitten</code> 包的配置示例，<code class="highlighter-rouge">pet-kitten/package.json</code>：</p>
 
 <div class="highlighter-rouge"><pre class="rougeHighlight"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"pet-kitten"</span><span class="p">,</span><span class="w">
@@ -295,11 +295,11 @@
 </span></code></pre>
 </div>
 
-<h2 id="use-yarnlock-to-pin-your-dependencies-a-classtoc-idtoc-use-yarn-lock-to-pin-your-dependencies-hreftoc-use-yarn-lock-to-pin-your-dependenciesa">Use <code class="highlighter-rouge">yarn.lock</code> to pin your dependencies <a class="toc" id="toc-use-yarn-lock-to-pin-your-dependencies" href="#toc-use-yarn-lock-to-pin-your-dependencies"></a></h2>
+<h2 id="yarnlock-a-classtoc-idtoc-use-yarn-lock-to-pin-your-dependencies-hreftoc-use-yarn-lock-to-pin-your-dependenciesa">使用 <code class="highlighter-rouge">yarn.lock</code> 来锁定依赖<a class="toc" id="toc-use-yarn-lock-to-pin-your-dependencies" href="#toc-use-yarn-lock-to-pin-your-dependencies"></a></h2>
 
-<p>Yarn also uses a <code class="highlighter-rouge">yarn.lock</code> file in the root of your project to make dependency resolution fast and reliable. You never need to touch this file- yarn owns it and will change it when managing dependencies.</p>
+<p>Yarn 还在包的根目录中创建了一个名为 <code class="highlighter-rouge">yarn.lock</code> 的文件，来保证项目的依赖解析快速并且可靠。 你不需要管理这个文件，当你更新依赖配置时，Yarn 会自动修改它。</p>
 
-<p>To make sure your app works consistently, <strong>you should always save the <code class="highlighter-rouge">yarn.lock</code> file in your code repository.</strong></p>
+<p>为了确保您的应用程序始终如一的运行，<strong>你需要把 <code class="highlighter-rouge">yarn.lock</code> 文件提交到你的仓库里。</strong></p>
 
     </div>
 

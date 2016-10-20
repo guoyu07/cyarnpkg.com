@@ -23,7 +23,7 @@
     <title>依赖和版本 | Yarn</title>
     <meta name="description" content="快速、可靠、安全的依赖管理工具。">
 
-    <link rel="stylesheet" href="/css/main.css?t=2016-10-20T06:31:38+00:00">
+    <link rel="stylesheet" href="/css/main.css?t=2016-10-20T07:29:10+00:00">
     <link rel="canonical" href="https://yarnpkg.com/zh-Hans/docs/dependencies">
     <link rel="alternate" type="application/rss+xml" title="Yarn" href="https://yarnpkg.com/feed.xml" />
 
@@ -276,11 +276,11 @@
 
 
     <div class="guide-content">
-      <p>Package dependencies are critical to the success of a package. When you develop the functionality of your package, you will very likely use existing code defined in other packages. Those packages then become dependencies to your project.</p>
+      <p>包的依赖是一个包重要的组成部分。当开发一个包的时候，您很可能使用其他包中定义的已有的代码，这样这些包就成为了这个项目的依赖项。</p>
 
-<p>Your <code class="highlighter-rouge">package.json</code> file is the home for the declaration of all your dependencies, from development to production to optional. You will specify both the package name and minimum version information for each dependency.</p>
+<p><code class="highlighter-rouge">package.json</code> 文件是声明所有依赖关系的地方，从开发依赖到生产依赖再到可选的依赖。您需要为每个依赖关系指定软件包名称和最低版本信息。</p>
 
-<p>Your <code class="highlighter-rouge">yarn.lock</code> file ensures that your package is consistent across installations by storing the versions of which dependencies are installed with your package.</p>
+<p>Yarn 在安装包的时候会生成 <code class="highlighter-rouge">yarn.lock</code> 文件，这个文件中存储着安装依赖的信息，这样能够确保每次安装包都会得到一致的依赖（从依赖版本到依赖结构）。</p>
 
     </div>
 

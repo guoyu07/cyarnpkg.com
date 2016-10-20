@@ -4,15 +4,8 @@ guide: docs_getting_started
 layout: guide
 ---
 
-Yarn is a package manager for your code. It allows you to use and share code
-with other developers from around the world. Yarn does this quickly, securely,
-and reliably so you don't ever have to worry.
+Yarn 是一个依赖管理工具。它能够管理你的代码，并与全世界的开发者分享代码。Yarn 是高效、安全和可靠的，你完全可以安心使用。
 
-Yarn allows you to use other developers' solutions to different problems,
-making it easier for you to develop your software. If you have problems, you
-can report issues or contribute back, and when the problem is fixed, you can
-use Yarn to keep it all up to date.
+Yarn 能够让你使用其他开发者开发的代码，让你更容易的开发软件。如果你在使用中发现任何问题，欢迎发 issues 或者贡献代码，问题将会很快被修复。
 
-Code is shared through something called a **package** (sometimes referred to as
-a **module**). A package contains all the code being shared as well as a
-`package.json` file which describes the package.
+代码是通过**包**（有时也被称为**组件**）。 在每一个包中会定义一个 `package.json` 文件，用来描述这个包中所有要被分享的代码。

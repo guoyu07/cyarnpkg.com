@@ -6,11 +6,12 @@ layout: guide
 
 <!-- [TODO: Rewrite and accommodate for other configuration files] -->
 
-## Configuring your package <a class="toc" id="toc-configuring-your-package" href="#toc-configuring-your-package"></a>
+## 包的配置 <a class="toc" id="toc-configuring-your-package" href="#toc-configuring-your-package"></a>
 
-Yarn looks for `package.json` files to identify each package and configure the behavior of yarn while running inside that package.
+Yarn 包的配置文件是每一个包根目录下的 `package.json` 文件。
 
-An example configuration for the `pet-kitten` package, which would be found at `pet-kitten/package.json`:
+看一个 `pet-kitten` 包的配置示例，`pet-kitten/package.json`：
+
 
 ```
 {
@@ -23,8 +24,8 @@ An example configuration for the `pet-kitten` package, which would be found at `
 }
 ```
 
-## Use `yarn.lock` to pin your dependencies <a class="toc" id="toc-use-yarn-lock-to-pin-your-dependencies" href="#toc-use-yarn-lock-to-pin-your-dependencies"></a>
+## 使用 `yarn.lock` 来锁定依赖<a class="toc" id="toc-use-yarn-lock-to-pin-your-dependencies" href="#toc-use-yarn-lock-to-pin-your-dependencies"></a>
 
-Yarn also uses a `yarn.lock` file in the root of your project to make dependency resolution fast and reliable. You never need to touch this file- yarn owns it and will change it when managing dependencies.
+Yarn 还在包的根目录中创建了一个名为 `yarn.lock` 的文件，来保证项目的依赖解析快速并且可靠。 你不需要管理这个文件，当你更新依赖配置时，Yarn 会自动修改它。
 
-To make sure your app works consistently, **you should always save the `yarn.lock` file in your code repository.**
+为了确保您的应用程序始终如一的运行，**你需要把 `yarn.lock` 文件提交到你的仓库里。**

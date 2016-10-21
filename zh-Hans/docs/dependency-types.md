@@ -4,12 +4,9 @@ guide: docs_dependencies
 layout: guide
 ---
 
-Dependencies serve many different purposes. Some dependencies are needed to
-build your project, others are needed when your running your program. As such
-there are a number of different types of dependencies that you can have (e.g.
-`dependencies`, `devDependencies`, and `peerDependencies`).
+依赖有很多不同的用途。一些依赖项是构建项目所需要的，另一些则是运行时需要的。因此，你可以有许多不同类型的依赖（例如 `dependencies`，`devDependencies` 和 `peerDependencies`）。
 
-Your `package.json` will contain all of these dependencies:
+`package.json` 包含所有这些依赖：
 
 ```json
 {
@@ -28,47 +25,36 @@ Your `package.json` will contain all of these dependencies:
   }
 }
 ```
-
-Most people only have `dependencies` and `devDependencies`, but each of these
-are important to understand.
+大多数人只会添加 `dependencies` 和 `devDependencies`，但是理解每一种依赖的类型都很重要。
 
 ##### `dependencies` <a class="toc" id="toc-dependencies" href="#toc-dependencies"></a>
 
-These are your normal dependencies, or rather ones that you need when running
-your code (e.g. React or ImmutableJS).
+这些是普通依赖，也就是生产环境运行代码时需要的依赖（例如 React 或 ImmutableJS）。
 
 ##### `devDependencies` <a class="toc" id="toc-devdependencies" href="#toc-devdependencies"></a>
 
-These are your development dependencies. Dependencies that you need at some
-point in the development workflow but not while running your code (e.g. Babel
-or Flow).
+这些是开发依赖。在开发工作流程中的某个点需要的依赖，但是在生产环境运行代码时并不需要（例如 Babel 或 Flow）。
 
 ##### `peerDependencies` <a class="toc" id="toc-peerdependencies" href="#toc-peerdependencies"></a>
 
-Peer dependencies are a special type of dependency that would only ever come up
-if you were publishing your own package.
+同伴依赖是一种很特殊的依赖，只有在包发布后哦才有可能会被使用。
 
-Having a peer dependency means that your package needs a dependency that is the
-same exact dependency as the person installing your package. This is useful for
-packages like `react` that need to have a single copy of `react-dom` that is
-also used by the person installing it.
+需要声明同伴依赖的情况：如果你开发了一个包，与宿主包（安装你的包的项目）有同样的依赖，那么需要把这个依赖声明到你的包的同伴依赖中，这样会由宿主包来安装这个依赖。通常用在插件包的开发，比如在 `react-dom` 的 `peerDependencies` 会声明对 `react` 的依赖。
 
 ##### `optionalDependencies` <a class="toc" id="toc-optionaldependencies" href="#toc-optionaldependencies"></a>
 
-Optional dependencies are just that: optional. If they fail to install, Yarn
-will still say the install process was successful.
+顾名思义就是：可选。如果安装失败，Yarn 仍然会告诉你安装过程成功。
 
-This is useful for dependencies that won't necessarily work on every machine
-and you have a fallback plan in case they are not installed (e.g. Watchman).
+这对于不一定在每台计算机上都能正常工作的依赖非常有用，并且由于它们并未被安装，您可以有备用的计划（例如：Watchman）。
 
 ##### `bundledDependencies` <a class="toc" id="toc-bundleddependencies" href="#toc-bundleddependencies"></a>
 
-Array of package names that will be bundled when publishing the package.
+一个包含了包名称的数组，这些包会在发布一起被打包。
 
-Bundled dependencies should be inside your project. The functionality is basically the same as normal dependencies. They will also be packed when running `yarn pack`.
+Bundled dependencies 应该在您的项目中。该功能基本上与正常的 dependencies 相同。当运行 `yarn pack` 时，它们也会被打包。
 
-Normal dependencies are usually installed from the npm registry. Bundled dependencies are useful in cases normal dependencies are not sufficient:
+正常的依赖通常从 npm 仓库中安装。Bundled Dependencies 在正常的依赖不足的情况下很有用：
 
-- When you want to re-use a third party library that doesn't come from the npm registry or that was modified.
-- When you want to re-use your own projects as modules.
-- When you want to distribute some files with your module.
+- 当您想重新使用不是来自 npm 仓库或者被修改的第三方 lib 时。
+- 当您想重新使用您自己的项目作为模块时。
+- 当您想要分发模块中的某一些文件时。

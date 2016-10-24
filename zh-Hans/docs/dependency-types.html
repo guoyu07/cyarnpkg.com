@@ -23,7 +23,7 @@
     <title>依赖的类型 | Yarn</title>
     <meta name="description" content="快速、可靠、安全的依赖管理工具。">
 
-    <link rel="stylesheet" href="/css/main.css?t=2016-10-20T07:29:10+00:00">
+    <link rel="stylesheet" href="/css/main.css?t=2016-10-24T09:50:03+00:00">
     <link rel="canonical" href="https://yarnpkg.com/zh-Hans/docs/dependency-types">
     <link rel="alternate" type="application/rss+xml" title="Yarn" href="https://yarnpkg.com/feed.xml" />
 
@@ -278,12 +278,9 @@
 
 
     <div class="guide-content">
-      <p>Dependencies serve many different purposes. Some dependencies are needed to
-build your project, others are needed when your running your program. As such
-there are a number of different types of dependencies that you can have (e.g.
-<code class="highlighter-rouge">dependencies</code>, <code class="highlighter-rouge">devDependencies</code>, and <code class="highlighter-rouge">peerDependencies</code>).</p>
+      <p>依赖有很多不同的用途。一些依赖项是构建项目所需要的，另一些则是运行时需要的。因此，你可以有许多不同类型的依赖（例如 <code class="highlighter-rouge">dependencies</code>，<code class="highlighter-rouge">devDependencies</code> 和 <code class="highlighter-rouge">peerDependencies</code>）。</p>
 
-<p>Your <code class="highlighter-rouge">package.json</code> will contain all of these dependencies:</p>
+<p><code class="highlighter-rouge">package.json</code> 包含所有这些依赖：</p>
 
 <div class="language-json highlighter-rouge"><pre class="rougeHighlight"><code><span class="p">{</span><span class="w">
   </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"my-project"</span><span class="p">,</span><span class="w">
@@ -302,51 +299,40 @@ there are a number of different types of dependencies that you can have (e.g.
 </span><span class="p">}</span><span class="w">
 </span></code></pre>
 </div>
-
-<p>Most people only have <code class="highlighter-rouge">dependencies</code> and <code class="highlighter-rouge">devDependencies</code>, but each of these
-are important to understand.</p>
+<p>大多数人只会添加 <code class="highlighter-rouge">dependencies</code> 和 <code class="highlighter-rouge">devDependencies</code>，但是理解每一种依赖的类型都很重要。</p>
 
 <h5 id="dependencies-a-classtoc-idtoc-dependencies-hreftoc-dependenciesa"><code class="highlighter-rouge">dependencies</code> <a class="toc" id="toc-dependencies" href="#toc-dependencies"></a></h5>
 
-<p>These are your normal dependencies, or rather ones that you need when running
-your code (e.g. React or ImmutableJS).</p>
+<p>这些是普通依赖，也就是生产环境运行代码时需要的依赖（例如 React 或 ImmutableJS）。</p>
 
 <h5 id="devdependencies-a-classtoc-idtoc-devdependencies-hreftoc-devdependenciesa"><code class="highlighter-rouge">devDependencies</code> <a class="toc" id="toc-devdependencies" href="#toc-devdependencies"></a></h5>
 
-<p>These are your development dependencies. Dependencies that you need at some
-point in the development workflow but not while running your code (e.g. Babel
-or Flow).</p>
+<p>这些是开发依赖。在开发工作流程中的某个点需要的依赖，但是在生产环境运行代码时并不需要（例如 Babel 或 Flow）。</p>
 
 <h5 id="peerdependencies-a-classtoc-idtoc-peerdependencies-hreftoc-peerdependenciesa"><code class="highlighter-rouge">peerDependencies</code> <a class="toc" id="toc-peerdependencies" href="#toc-peerdependencies"></a></h5>
 
-<p>Peer dependencies are a special type of dependency that would only ever come up
-if you were publishing your own package.</p>
+<p>同伴依赖是一种很特殊的依赖，只有在包发布后哦才有可能会被使用。</p>
 
-<p>Having a peer dependency means that your package needs a dependency that is the
-same exact dependency as the person installing your package. This is useful for
-packages like <code class="highlighter-rouge">react</code> that need to have a single copy of <code class="highlighter-rouge">react-dom</code> that is
-also used by the person installing it.</p>
+<p>需要声明同伴依赖的情况：如果你开发了一个包，与宿主包（安装你的包的项目）有同样的依赖，那么需要把这个依赖声明到你的包的同伴依赖中，这样会由宿主包来安装这个依赖。通常用在插件包的开发，比如在 <code class="highlighter-rouge">react-dom</code> 的 <code class="highlighter-rouge">peerDependencies</code> 会声明对 <code class="highlighter-rouge">react</code> 的依赖。</p>
 
 <h5 id="optionaldependencies-a-classtoc-idtoc-optionaldependencies-hreftoc-optionaldependenciesa"><code class="highlighter-rouge">optionalDependencies</code> <a class="toc" id="toc-optionaldependencies" href="#toc-optionaldependencies"></a></h5>
 
-<p>Optional dependencies are just that: optional. If they fail to install, Yarn
-will still say the install process was successful.</p>
+<p>顾名思义就是：可选。如果安装失败，Yarn 仍然会告诉你安装过程成功。</p>
 
-<p>This is useful for dependencies that won’t necessarily work on every machine
-and you have a fallback plan in case they are not installed (e.g. Watchman).</p>
+<p>这对于不一定在每台计算机上都能正常工作的依赖非常有用，并且由于它们并未被安装，您可以有备用的计划（例如：Watchman）。</p>
 
 <h5 id="bundleddependencies-a-classtoc-idtoc-bundleddependencies-hreftoc-bundleddependenciesa"><code class="highlighter-rouge">bundledDependencies</code> <a class="toc" id="toc-bundleddependencies" href="#toc-bundleddependencies"></a></h5>
 
-<p>Array of package names that will be bundled when publishing the package.</p>
+<p>一个包含了包名称的数组，这些包会在发布一起被打包。</p>
 
-<p>Bundled dependencies should be inside your project. The functionality is basically the same as normal dependencies. They will also be packed when running <code class="highlighter-rouge">yarn pack</code>.</p>
+<p>Bundled dependencies 应该在您的项目中。该功能基本上与正常的 dependencies 相同。当运行 <code class="highlighter-rouge">yarn pack</code> 时，它们也会被打包。</p>
 
-<p>Normal dependencies are usually installed from the npm registry. Bundled dependencies are useful in cases normal dependencies are not sufficient:</p>
+<p>正常的依赖通常从 npm 仓库中安装。Bundled Dependencies 在正常的依赖不足的情况下很有用：</p>
 
 <ul>
-  <li>When you want to re-use a third party library that doesn’t come from the npm registry or that was modified.</li>
-  <li>When you want to re-use your own projects as modules.</li>
-  <li>When you want to distribute some files with your module.</li>
+  <li>当您想重新使用不是来自 npm 仓库或者被修改的第三方 lib 时。</li>
+  <li>当您想重新使用您自己的项目作为模块时。</li>
+  <li>当您想要分发模块中的某一些文件时。</li>
 </ul>
 
     </div>

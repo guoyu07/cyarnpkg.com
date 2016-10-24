@@ -4,34 +4,24 @@ guide: docs_dependencies
 layout: guide
 ---
 
-## Semantic Versioning <a class="toc" id="toc-semantic-versioning" href="#toc-semantic-versioning"></a>
+## 语义化版本定义 <a class="toc" id="toc-semantic-versioning" href="#toc-semantic-versioning"></a>
 
-Packages in Yarn follow [Semantic Versioning](http://semver.org/), also known
-as "semver". When you install a new package from the registry it will be added
-to your `package.json` with a semver version range.
+Yarn 中的包遵循 语义化版本定义规则, 也称为 [Semantic Versioning](http://semver.org/)。 当你从仓库中安装一个新包时，它就会以 ”semver“ 版本范围的格式添加到你的 `package.json` 中。
 
-These versions are broken down into `major.minor.patch` and looks like one of
-these: `3.14.1`, `0.42.0`, `2.7.18`. Each part of the version gets incremented
-at various times:
+这些版本分为 `major.minor.patch` 看起来像：3.14.1, 0.42.0, 2.7.18。版本的每个部分在不同的时间递增：
 
-- Increment `major` when you make a **breaking** or **incompatible** change to
-  the API of a package.
-- Increment `minor` when you add **new functionality** while staying
-  **backwards-compatible**
-- Increment `patch` when you make **bug fixes** while staying
-  **backwards-compatible**
+- 当您对包的API进行**破坏性**或**不兼容**更改时，增加 `major` 版本。
+- 在添加**新功能**并保持**向后兼容**时，增加 `minor` 版本。
+- 当**修复 Bug** 并保持**向后兼容**时，增加 `patch` 版本。
 
-> **Note:** There are also sometimes "labels" or "extensions" to the semver
-> format that mark things like pre-releases or betas (e.g. `2.0.0-beta.3`)
+> **注意：** 有时候还有一些添加了“标签”或“扩展”名的版本号（例如 2.0.0-beta.3）
 
-When developers talk about two semver versions being "compatible" with one
-another they are referring to the **backwards-compatible** changes (`minor` and
-`patch`).
+当开发人员谈论两个互相“兼容”的 semver 版本时，他们指的是**向后兼容**的更改（`minor` 和 `patch`）。
 
-## Version ranges <a class="toc" id="toc-version-ranges" href="#toc-version-ranges"></a>
+## 版本范围 <a class="toc" id="toc-version-ranges" href="#toc-version-ranges"></a>
 
-When you want to specify a dependency you specify it's name and a
-**version range** in your `package.json` like one of these:
+当你想指定一个依赖关系时，你在 `package.json` 中指定依赖的名字和一个**版本范围**，就像下面这样：
+
 
 ```json
 {
@@ -43,131 +33,107 @@ When you want to specify a dependency you specify it's name and a
 }
 ```
 
-You'll notice that we have a bunch of characters separate from the version.
-These characters, `>=`, `<`, `^`, and `~`, are **operators** and they are used
-to specify **version ranges**.
+你会注意到，我们有许多版本范围之间的分隔符，这些字符`>=`、`<`、`^`和`~`，是**运算符**它们用于指定**版本范围**。
 
-The purpose of a version range is to specify which versions of a dependency
-will work for your code.
+版本范围的目的是指定依赖项的哪些版本将对您的代码有效。
 
-#### Comparators <a class="toc" id="toc-comparators" href="#toc-comparators"></a>
+#### 比较器 <a class="toc" id="toc-comparators" href="#toc-comparators"></a>
 
-Each version range is made up of **comparators**. These comparators are simply
-an _operator_ followed by a _version_. Here are some of the basic operators:
+每个版本范围都是由**比较器**组成。这些比较器只是一个_运算符_，后面跟一个_版本号_。这里有一些基本的运算符：
 
-| Comparator | Description                                                 |
+| 比较器 | 描述                                                 |
 | ---------- | ----------------------------------------------------------- |
-| `<2.0.0`   | Any version that is ***less than*** `2.0.0`                 |
-| `<=3.1.4`  | Any version that is ***less than or equal to*** `3.1.4`     |
-| `>0.4.2`   | Any version that is ***greater than*** `0.4.2`             |
-| `>=2.7.1`  | Any version that is ***greater than or equal to*** `2.7.1` |
-| `=4.6.6`   | Any version that is ***equal to*** `4.6.6`                  |
+| `<2.0.0`   | ***小于*** `2.0.0` 的任意版本                                   |
+| `<=3.1.4`  | ***小于等于*** `3.1.4` 的任意版本                               |
+| `>0.4.2`   | ***大于*** `0.4.2` 的任意版本                                   |
+| `>=2.7.1`  | ***大于等于*** `2.7.1` 的任意版本                                |
+| `=4.6.6`   | ***等于*** `4.6.6` 版本                                      |
 
-> **Note**: If no operator is specified, then `=` is assumed in the version
-> range. So the `=` operator is effectively optional.
+> **注意**：如果没有指定任何运算符，默认的范围就是`=`。因此`=`运算符实际上是可选的
 
-#### Intersections <a class="toc" id="toc-intersections" href="#toc-intersections"></a>
+#### 交集 <a class="toc" id="toc-intersections" href="#toc-intersections"></a>
 
-Comparators can be joined by whitespace to create a **comparator set**. This
-creates an **intersection** of the comparators it includes. For example, the
-comparator set `>=2.0.0 <3.1.4` means _"Greater than or equal to `2.0.0`
-**and** less than `3.1.4`"_.
+比较器可以通过空格连接以创建**比较器集合**。这将创建比较器集合的**交集**。例如比较器组`>=2.0.0 <3.1.4`表示_“大于或者等于 `2.0.0` 且**小于** `3.1.4`“_。
 
-#### Unions <a class="toc" id="toc-unions" href="#toc-unions"></a>
+#### 并集 <a class="toc" id="toc-unions" href="#toc-unions"></a>
 
-A full version range can include a **union** of multiple comparator sets joined
-together by `||`. If either side of the union is satisfied, then the whole
-version range is satisfied. For example, the version range `<2.0.0 || >3.1.4`
-means _"Less than `2.0.0` **or** greater than `3.1.4`"_.
+完整的版本范围可以包括通过`||`连接在一起的多个比较器集合的**并集**如果满足并集的任一侧，则满足整个版本范围。例如，版本范围`<2.0.0 || >3.1.4`表示_“小于 `2.0.0 **或者**大于 3.1.4`“_。
 
-#### Pre-release tags <a class="toc" id="toc-pre-release-tags" href="#toc-pre-release-tags"></a>
+#### 预发布标签 <a class="toc" id="toc-pre-release-tags" href="#toc-pre-release-tags"></a>
 
-Versions can also have **pre-release tags** (e.g. `3.1.4-beta.2`). If a
-comparator includes a version with a pre-release tag it will only match against
-versions that have the same `major.minor.patch` version.
+版本也可以有**预发布标签**（例如：`3.1.4-beta.2`）。如果比较器包含了具有预发布标签的版本，则仅能匹配具有相同 `major.minor.patch` 的版本。
 
-For example, the range `>=3.1.4-beta.2` would match `3.1.4-beta.2` or
-`3.1.4-beta.12`, but would *not* match `3.1.5-beta.1` even though it is
-_technically_ "greater than or equal to" (`>=`) the `3.1.4-beta.2` version.
+例如，范围`>=3.1.4-beta.2` 将匹配 `3.1.4-beta.2` 或者 `3.1.4-beta.12`，但*不*匹配  `3.1.5-beta.1` 即便它在_技术上_“大于或者等于”（`>=`）`3.1.4-beta.2` 版本。
 
-Pre-releases tend to contain accidental breaking changes and usually you do not
-want to match pre-releases outside of the version you have specified so this
-behavior is useful.
+预发布通常包含意外中断的更改，通常不希望匹配您指定的版本之外的预发布，因此这个行为很有用处。
 
-#### Advanced version ranges <a class="toc" id="toc-advanced-version-ranges" href="#toc-advanced-version-ranges"></a>
+#### 高级版本范围 <a class="toc" id="toc-advanced-version-ranges" href="#toc-advanced-version-ranges"></a>
 
-##### Hyphen Ranges <a class="toc" id="toc-hyphen-ranges" href="#toc-hyphen-ranges"></a>
+##### 连字符范围 <a class="toc" id="toc-hyphen-ranges" href="#toc-hyphen-ranges"></a>
 
-Hyphen ranges (e.g. `2.0.0 - 3.1.4`) specify an _inclusive_ set. If part of the
-version is left out (e.g. `0.4` or `2`) then they are filled in with zeroes.
+连字符范围（例如：`2.0.0 - 3.1.4`）指定了_包含_集。如果版本的一部分被省略（例如：`0.4` 或 `2`），则用零来填充。
 
-| Version range   | Expanded version range |
+| 本范围           | 扩展版本范围             |
 | --------------- | ---------------------- |
 | `2.0.0 - 3.1.4` | `>=2.0.0 <=3.1.4`      |
 | `0.4 - 2`       | `>=0.4.2 <=2.0.0`      |
 
-##### X-Ranges <a class="toc" id="toc-x-ranges" href="#toc-x-ranges"></a>
+##### X-范围 <a class="toc" id="toc-x-ranges" href="#toc-x-ranges"></a>
 
-Any of `X`, `x`, or `*` can be used to leave part or all of a version
-unspecified.
+`X`、`x` 或 `*` 中的任何一个都可以用于保留未指定版本的部分或者全部。
 
-| Version range     | Expanded version range                           |
+| 版本范围           | 扩展版本范围                           |
 | ----------------- | ------------------------------------------------ |
-| `*`               | `>=0.0.0` (any version)                          |
-| `2.x`             | `>=2.0.0 <3.0.0` (match major version)           |
-| `3.1.x`           | `>=3.1.0 <3.2.0` (match major and minor version) |
+| `*`               | `>=0.0.0`（任何版本）                         |
+| `2.x`             | `>=2.0.0 <3.0.0`（匹配major版本）           |
+| `3.1.x`           | `>=3.1.0 <3.2.0`（匹配major和minor版本） |
 
-If part of a version is left out, it is assumed to be an x-range.
+如果省略版本的一部分，则默认使用 X- 范围。
 
-| Version range      | Expanded version range      |
+| 版本范围      | 扩展版本范围      |
 | ------------------ | --------------------------- |
-| ` ` (empty string) | `*` or `>=0.0.0`            |
-| `2`                | `2.x.x` or `>=2.0.0 <3.0.0` |
-| `3.1`              | `3.1.x` or `>=3.1.0 <3.2.0` |
+| ` `（空字符串） | `*` 或 `>=0.0.0`            |
+| `2`                | `2.x.x` 或 `>=2.0.0 <3.0.0` |
+| `3.1`              | `3.1.x` 或 `>=3.1.0 <3.2.0` |
 
-##### Tilde Ranges <a class="toc" id="toc-tilde-ranges" href="#toc-tilde-ranges"></a>
+##### 波浪号范围 <a class="toc" id="toc-tilde-ranges" href="#toc-tilde-ranges"></a>
 
-Using `~` with a minor version specified allows `patch` changes. Using `~` with
-only major version specified will allow `minor` changes.
+使用`~`与指定的次要版本允许 `patch` 更改。使用`~`仅指定主要版本将允许 `minor` 更改。
 
-| Version range      | Expanded version range      |
+| 版本范围             | 扩展版本范围      |
 | ------------------ | --------------------------- |
 | `~3.1.4`           | `>=3.1.4 <3.2.0`            |
-| `~3.1`             | `3.1.x` or `>=3.1.0 <3.2.0` |
-| `~3`               | `3.x` or `>=3.0.0 <4.0.0`   |
+| `~3.1`             | `3.1.x` 或 `>=3.1.0 <3.2.0` |
+| `~3`               | `3.x` 或 `>=3.0.0 <4.0.0`   |
 
-> **Note:** Specifying pre-releases in tilde ranges will only match
-> pre-releases in that same full version. For example, the version range
-> `~3.1.4-beta.2` would match against `3.1.4-beta.4` but not `3.1.5-beta.2`
-> because the `major.minor.patch` version is different.
+> **注意：**在波浪号范围中指定预发布版本只会匹配同一完整版本中的预发布版本。例如，`~3.1.4-beta.2` 将与 `3.1.4-beta.4` 匹配，但不与 `3.1.5-beta.2` 匹配，因为 `major.minor.patch` 版本不同。
 
-##### Caret Ranges <a class="toc" id="toc-caret-ranges" href="#toc-caret-ranges"></a>
+##### 插入符范围 <a class="toc" id="toc-caret-ranges" href="#toc-caret-ranges"></a>
+
+版本中第一个非零数字的不允许更改，即 `3.1.4` 中的 `3` 或者 `0.4.2`中的 `4`。
 
 Allow changes that do not modify the first non-zero digit in the version,
 either the `3` in `3.1.4` or the `4` in `0.4.2`.
 
-| Version range      | Expanded version range |
+| 版本范围      | 扩展版本范围 |
 | ------------------ | ---------------------- |
 | `^3.1.4`           | `>=3.1.4 <4.0.0`       |
 | `^0.4.2`           | `>=0.4.2 <0.5.0`       |
 | `^0.0.2`           | `>=0.0.2 <0.0.3`       |
 
-> **Note:** By default when you run `yarn add [package-name]` it will use a
-> caret range.
+> **注意：** 默认情况下，当您运行 `yarn add [package-name]` 时，将使用^范围。
 
-If part of the version is left out, the missing parts are filled in with
-zeroes. However, they will still allow for that value to be changed.
+如何省略了版本的一部分，则用零填充确实的部分。但是，它们仍然允许更改该值。
 
-| Version range      | Expanded version range |
+| 版本范围      | 扩展版本范围 |
 | ------------------ | ---------------------- |
 | `^0.0.x`           | `>=0.0.0 <0.1.0`       |
 | `^0.0`             | `>=0.0.0 <0.1.0`       |
 | `^0.x`             | `>=0.0.0 <1.0.0`       |
 | `^0`               | `>=0.0.0 <1.0.0`       |
 
-### More resources <a class="toc" id="toc-more-resources" href="#toc-more-resources"></a>
+### 更多资源 <a class="toc" id="toc-more-resources" href="#toc-more-resources"></a>
 
-- For a full specification of how this versioning system works see the
-[`node-semver` README](https://github.com/npm/node-semver).
-- Test out this versioning system on actual packages using the
-[npm semver calculator](https://semver.npmjs.com/).
+- 有关此版本控制系统如何工作的完整规范，请参见 
+[`node-semver` README](https://github.com/npm/node-semver)。
+- 使用 [npm semver 计算器](https://semver.npmjs.com/)在实际包上测试版本控制系统。
